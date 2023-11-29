@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
+import Typewriter from "typewriter-effect";
 
 function Hero() {
   const hi = {
@@ -67,7 +68,29 @@ function Hero() {
           variants={developer}
           className="font-sans text-white-color text-[130px] font-black opacity-60 p-0 mt-[-80px]"
         >
-          Yet another otaku.
+          <Typewriter
+            options={{
+              strings: [
+                "developer.",
+                "yet another otaku.",
+                "manga reader.",
+                "introvert.",
+                "nerd.",
+                "overthinker.",
+                "believes in time-travel.",
+                "divide & conquer.",
+                "array is not a pointer.",
+                "loves javascript.",
+                "hates javascript.",
+                "everything is object.",
+                "++i is better.",
+                "it's one-electron world.",
+                "ghost exists.",
+              ],
+              autoStart: true,
+              loop: true,
+            }}
+          />
         </motion.h3>
         <motion.p
           variants={para}
