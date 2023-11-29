@@ -6,7 +6,7 @@ function Socials() {
     <motion.div
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
-      transition={{ duration: 1, ease: "easeInOut", delay: 3 }}
+      transition={{ duration: 1, ease: "easeInOut", delay: 4 }}
       className="fixed flex flex-col gap-4 items-center bottom-0 left-10"
     >
       <motion.div

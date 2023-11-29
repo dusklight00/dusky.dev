@@ -6,7 +6,7 @@ function Navbar() {
     <motion.nav
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
-      transition={{ duration: 1, ease: "easeInOut", delay: 3 }}
+      transition={{ duration: 1, ease: "easeInOut", delay: 4 }}
       className="px-4 py-4 top-0 w-full flex justify-end"
       id="navbar"
     >

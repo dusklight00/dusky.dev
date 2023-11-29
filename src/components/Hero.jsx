@@ -8,7 +8,7 @@ function Hero() {
       opacity: 1,
       y: 0,
       transition: {
-        delay: 4,
+        delay: 3,
       },
     },
   };
@@ -19,7 +19,7 @@ function Hero() {
       opacity: 1,
       y: 0,
       transition: {
-        delay: 4.25,
+        delay: 3.25,
       },
     },
   };
@@ -30,7 +30,7 @@ function Hero() {
       opacity: 0.6,
       y: 0,
       transition: {
-        delay: 4.5,
+        delay: 3.5,
       },
     },
   };
@@ -41,7 +41,7 @@ function Hero() {
       opacity: 1,
       y: 0,
       transition: {
-        delay: 4.75,
+        delay: 3.75,
       },
     },
   };
