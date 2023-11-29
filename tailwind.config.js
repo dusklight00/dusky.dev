@@ -8,6 +8,7 @@ export default {
         "navy-color": "#181B25",
         "navy-dark-color": "#12151C",
         "white-color": "#ECEEF3",
+        "white-dark-color": "#ACB2C9",
       },
     },
   },

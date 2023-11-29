@@ -122,7 +122,7 @@ function Socials() {
           <line x1="12" y1="2" x2="12" y2="8.5"></line>
         </motion.svg>
       </motion.div>
-      <div className="border border-1 border-white-color w-px h-20"></div>
+      <div className="border border-1 border-white-dark-color w-px h-20"></div>
     </motion.div>
   );
 }

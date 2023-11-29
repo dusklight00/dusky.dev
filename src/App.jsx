@@ -3,6 +3,7 @@ import BgGridLines from "./components/BgGridLines";
 import Navbar from "./components/Navbar";
 import Socials from "./components/Socials";
 import GlobalStyle from "./styles/GlobalStyle";
+import Email from "./components/Email";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
       <Loader />
       <Navbar />
       <Socials />
+      <Email />
     </div>
   );
 }
