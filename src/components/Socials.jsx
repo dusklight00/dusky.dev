@@ -43,9 +43,8 @@ function Socials() {
           strokeWidth="2"
           strokeLinecap="round"
           strokeLinejoin="round"
-          class="feather feather-instagram"
           height={35}
-          className="p-2"
+          className="feather feather-instagram p-2"
           whileHover={{ stroke: "#ECEEF3" }}
         >
           <title>Instagram</title>
@@ -67,9 +66,8 @@ function Socials() {
           strokeWidth="2"
           strokeLinecap="round"
           strokeLinejoin="round"
-          class="feather feather-twitter"
           height={35}
-          className="p-2"
+          className="feather feather-twitter p-2"
           whileHover={{ stroke: "#ECEEF3" }}
         >
           <title>Twitter</title>
@@ -89,9 +87,8 @@ function Socials() {
           strokeWidth="2"
           strokeLinecap="round"
           strokeLinejoin="round"
-          class="feather feather-linkedin"
           height={35}
-          className="p-2"
+          className="feather feather-linkedin p-2"
           whileHover={{ stroke: "#ECEEF3" }}
         >
           <title>LinkedIn</title>
@@ -113,9 +110,8 @@ function Socials() {
           strokeWidth="2"
           strokeLinecap="round"
           strokeLinejoin="round"
-          class="feather feather-codepen"
           height={35}
-          className="p-2"
+          className="feather feather-codepen p-2"
           whileHover={{ stroke: "#ECEEF3" }}
         >
           <title>CodePen</title>
