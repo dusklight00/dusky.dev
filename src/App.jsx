@@ -4,6 +4,7 @@ import Navbar from "./components/Navbar";
 import Socials from "./components/Socials";
 import GlobalStyle from "./styles/GlobalStyle";
 import Email from "./components/Email";
+import Hero from "./components/Hero";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
       <Navbar />
       <Socials />
       <Email />
+      <Hero />
     </div>
   );
 }
