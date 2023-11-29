@@ -5,10 +5,12 @@ import Socials from "./components/Socials";
 import GlobalStyle from "./styles/GlobalStyle";
 import Email from "./components/Email";
 import Hero from "./components/Hero";
+import AnimatedCursor from "react-animated-cursor";
 
 function App() {
   return (
     <div className="App">
+      <AnimatedCursor />
       <GlobalStyle />
       <BgGridLines height="500px" />
       <Loader />

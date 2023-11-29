@@ -67,7 +67,7 @@ function Hero() {
           variants={developer}
           className="font-sans text-white-color text-[130px] font-black opacity-60 p-0 mt-[-80px]"
         >
-          A Developer.
+          Yet another otaku.
         </motion.h3>
         <motion.p
           variants={para}
