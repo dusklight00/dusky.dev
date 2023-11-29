@@ -19,7 +19,7 @@ function BgGridLines({ height }) {
           cellWidth2={40}
           height={100}
         >
-          <div style={{ height: height }}>asd</div>
+          <div style={{ height: height }}></div>
         </GridLines>
       </div>
     </motion.div>

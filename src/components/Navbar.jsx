@@ -1,5 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { Button } from "@chakra-ui/react";
+import { DownloadIcon } from "@chakra-ui/icons";
 
 function Navbar() {
   return (
@@ -7,9 +9,17 @@ function Navbar() {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 1, ease: "easeInOut", delay: 4 }}
-      className="px-4 py-4 top-0 w-full flex justify-end"
+      className="px-4 py-4 top-0 w-full flex justify-end gap-3"
       id="navbar"
     >
+      <Button
+        leftIcon={<DownloadIcon />}
+        variant="ghost"
+        colorScheme="white"
+        size="lg"
+      >
+        Resume
+      </Button>
       <button className="p-2 rounded-lg bg-body-800 hover:bg-body-700 outline outline-1 outline-navy-color outline-body-700 transition-all bg-navy-dark-color z-10 hover:bg-navy-color">
         <svg
           stroke="currentColor"
