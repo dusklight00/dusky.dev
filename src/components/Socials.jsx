@@ -10,7 +10,7 @@ function Socials() {
       className="fixed flex flex-col gap-4 items-center bottom-0 left-10"
     >
       <motion.div
-        className="inline-block relative cursor-pointer"
+        className="inline-block relative"
         whileHover={{ bottom: "5px" }}
       >
         <motion.svg
@@ -31,7 +31,7 @@ function Socials() {
         </motion.svg>
       </motion.div>
       <motion.div
-        className="inline-block relative cursor-pointer"
+        className="inline-block relative"
         whileHover={{ bottom: "5px" }}
       >
         <motion.svg
@@ -54,7 +54,7 @@ function Socials() {
         </motion.svg>
       </motion.div>
       <motion.div
-        className="inline-block relative cursor-pointer"
+        className="inline-block relative"
         whileHover={{ bottom: "5px" }}
       >
         <motion.svg
@@ -75,7 +75,7 @@ function Socials() {
         </motion.svg>
       </motion.div>
       <motion.div
-        className="inline-block relative cursor-pointer"
+        className="inline-block relative"
         whileHover={{ bottom: "5px" }}
       >
         <motion.svg
@@ -98,7 +98,7 @@ function Socials() {
         </motion.svg>
       </motion.div>
       <motion.div
-        className="inline-block relative cursor-pointer"
+        className="inline-block relative"
         whileHover={{ bottom: "5px" }}
       >
         <motion.svg

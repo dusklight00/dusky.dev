@@ -6,6 +6,11 @@ import GlobalStyle from "./styles/GlobalStyle";
 import Email from "./components/Email";
 import Hero from "./components/Hero";
 import AnimatedCursor from "react-animated-cursor";
+import Avatar from "./components/Avatar";
+
+import AvatarImage from "./assets/avatar.jpg";
+
+import { motion } from "framer-motion";
 
 function App() {
   return (
@@ -13,11 +18,57 @@ function App() {
       <AnimatedCursor />
       <GlobalStyle />
       <BgGridLines height="500px" />
-      <Loader />
+      {/* <Loader /> */}
       <Navbar />
       <Socials />
       <Email />
       <Hero />
+
+      <Avatar />
+
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
     </div>
   );
 }
