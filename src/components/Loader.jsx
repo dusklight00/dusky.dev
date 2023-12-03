@@ -32,7 +32,7 @@ function Loader() {
   };
 
   return (
-    <div className="absolute w-screen flex items-center justify-center h-screen">
+    <div className="fixed w-full flex items-center justify-center h-screen">
       <motion.svg
         xmlns="http://www.w3.org/2000/svg"
         width="150"
