@@ -6,13 +6,8 @@ import GlobalStyle from "./styles/GlobalStyle";
 import Email from "./components/Email";
 import Hero from "./components/Hero";
 import AnimatedCursor from "react-animated-cursor";
-import Avatar from "./components/Avatar";
-import Link from "./components/Link";
 import AboutMe from "./components/AboutMe";
-
-import AvatarImage from "./assets/avatar.jpg";
-
-import { motion } from "framer-motion";
+import ProjectSection from "./components/ProjectSection";
 
 function App() {
   return (
@@ -26,6 +21,7 @@ function App() {
       <Email />
       <Hero />
       <AboutMe />
+      <ProjectSection />
     </div>
   );
 }
