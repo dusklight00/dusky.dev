@@ -1,10 +1,16 @@
 import React from "react";
 import Link from "./Link";
 import Avatar from "./Avatar";
+import { motion } from "framer-motion";
 
 function AboutMe() {
   return (
-    <div className="flex items-center gap-20 mx-64 h-screen">
+    <motion.div
+      className="flex items-center gap-20 mx-64 h-screen"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 1, ease: "easeInOut", delay: 4 }}
+    >
       <div className="flex-1 flex flex-col">
         <div className="flex items-center gap-10 mt-10">
           <div className="font-mono text-grey-color text-xl">01.</div>
@@ -43,7 +49,7 @@ function AboutMe() {
       <div>
         <Avatar />
       </div>
-    </div>
+    </motion.div>
   );
 }
 
