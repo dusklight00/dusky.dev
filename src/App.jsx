@@ -18,13 +18,13 @@ function App() {
       <GlobalStyle />
       <BgGridLines height="500px" />
       <Loader />
-      {/* <Navbar /> */}
-      {/* <Socials /> */}
-      {/* <Email /> */}
-      {/* <Hero /> */}
-      {/* <AboutMe /> */}
-      {/* <ProjectSection /> */}
-      {/* <NoteProjectSection /> */}
+      <Navbar />
+      <Socials />
+      <Email />
+      <Hero />
+      <AboutMe />
+      <ProjectSection />
+      <NoteProjectSection />
       <ArticleLink />
     </div>
   );

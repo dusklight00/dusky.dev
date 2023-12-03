@@ -15,7 +15,7 @@ function ArticleLink() {
       onMouseOver={() => setIsHighlight(true)}
       onMouseLeave={() => setIsHighlight(false)}
     >
-      <div className="text-xl font-bold font-sans pt-5 px-5">
+      <div className="text-xl font-bold font-sans pt-5 px-5 py-1">
         <RoughNotation
           type="underline"
           show={isHighlight}
