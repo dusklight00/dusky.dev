@@ -8,7 +8,7 @@ function BgGridLines({ height }) {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 1, ease: "easeInOut", delay: 2 }}
-      className="absolute inset-0"
+      className="absolute inset-0 z-[-1]"
     >
       <div className="relative opacity-5">
         <div className="absolute inset-0 bg-gradient-to-b from-transparent to-background-color"></div>

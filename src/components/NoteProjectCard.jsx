@@ -15,9 +15,9 @@ function NoteProjectCard() {
           height="40px"
           fill="none"
           stroke="currentColor"
-          stroke-width="1"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeWidth="1"
+          strokeLinecap="round"
+          strokeLinejoin="round"
           className="feather feather-folder hover:text-white-color transition-colors"
         >
           <title>Folder</title>
@@ -30,9 +30,9 @@ function NoteProjectCard() {
           height="22px"
           fill="none"
           stroke="currentColor"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
           className="feather feather-external-link hover:text-white-color transition-colors text-white-dark-color"
         >
           <title>External Link</title>

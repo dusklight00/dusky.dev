@@ -8,8 +8,8 @@ import Hero from "./components/Hero";
 import AnimatedCursor from "react-animated-cursor";
 import AboutMe from "./components/AboutMe";
 import ProjectSection from "./components/ProjectSection";
-import NoteProjectCard from "./components/NoteProjectCard";
 import NoteProjectSection from "./components/NoteProjectSection";
+import ArticleLink from "./components/ArticleLink";
 
 function App() {
   return (
@@ -18,13 +18,14 @@ function App() {
       <GlobalStyle />
       <BgGridLines height="500px" />
       <Loader />
-      <Navbar />
-      <Socials />
-      <Email />
-      <Hero />
-      <AboutMe />
-      <ProjectSection />
-      <NoteProjectSection />
+      {/* <Navbar /> */}
+      {/* <Socials /> */}
+      {/* <Email /> */}
+      {/* <Hero /> */}
+      {/* <AboutMe /> */}
+      {/* <ProjectSection /> */}
+      {/* <NoteProjectSection /> */}
+      <ArticleLink />
     </div>
   );
 }
