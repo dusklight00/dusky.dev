@@ -4,7 +4,7 @@ import Avatar from "./Avatar";
 
 function AboutMe() {
   return (
-    <div className="flex items-center gap-20 mx-64">
+    <div className="flex items-center gap-20 mx-64 h-screen">
       <div className="flex-1 flex flex-col">
         <div className="flex items-center gap-10 mt-10">
           <div className="font-mono text-grey-color text-xl">01.</div>

@@ -28,7 +28,7 @@ function Link({ children }) {
 
   return (
     <motion.span
-      className="font-bold font-sans text-white-color text-xl relative cursor-pointer group whitespace-nowrap"
+      className="font-bold font-sans text-white-color text-xl relative group whitespace-nowrap"
       whileHover="hover"
     >
       {children}

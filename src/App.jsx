@@ -17,7 +17,7 @@ import { motion } from "framer-motion";
 function App() {
   return (
     <div className="App">
-      {/* <AnimatedCursor /> */}
+      <AnimatedCursor />
       <GlobalStyle />
       <BgGridLines height="500px" />
       <Loader />
@@ -25,63 +25,7 @@ function App() {
       <Socials />
       <Email />
       <Hero />
-
       <AboutMe />
-
-      {/* <motion.span
-        className="font-bold font-sans text-white-color text-xl relative cursor-pointer"
-        whileHover="hover"
-      >
-        External Link
-        <motion.div
-          className="border inline-block w-0 absolute bottom-0 left-0 border-white-color"
-          variants={lineEffect}
-        ></motion.div>
-      </motion.span> */}
-
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
     </div>
   );
 }

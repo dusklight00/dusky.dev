@@ -54,7 +54,7 @@ function Hero() {
       initial="hidden"
       animate="show"
     >
-      <div className="inline-block">
+      <div className="h-screen">
         <motion.h1 variants={hi} className="font-mono text-grey-color text-xl">
           Hi, my name is
         </motion.h1>
