@@ -44,15 +44,19 @@ function App() {
               out hacking together a custom reblog button taught me a lot about
               HTML & CSS!
             </p>
-            Fast-forward to today, and I’ve had the privilege of working at an
-            advertising agency, <Link>a start-up</Link>,{" "}
-            <Link>a huge corporation</Link>, and{" "}
-            <Link>a student-led design studio</Link>. My main focus these days
-            is building accessible, inclusive products and digital experiences
-            at Upstatement for a variety of clients. I also recently launched a
-            course that covers everything you need to build a web app with the
-            Spotify API using Node & React. Here are a few technologies I’ve
-            been working with recently:
+            <p>
+              Fast-forward to today, and I’ve had the privilege of working at an
+              advertising agency, <Link>a start-up</Link>,{" "}
+              <Link>a huge corporation</Link>, and{" "}
+              <Link>a student-led design studio</Link>. My main focus these days
+              is building accessible, inclusive products and digital experiences
+              at Upstatement for a variety of clients.
+            </p>
+            <p>
+              I also recently launched a course that covers everything you need
+              to build a web app with the Spotify API using Node & React.
+            </p>
+            Here are a few technologies I’ve been working with recently:
           </div>
           <Avatar />
         </div>

@@ -26,43 +26,18 @@ function Link({ children }) {
     return () => clearInterval(interval);
   }, [width]);
 
-  //   useEffect(() => {
-  //     if (ref.current) {
-  //       setWidth(ref.current.offsetWidth);
-  //     }
-
-  //     const handleResize = () => {
-  //       if (ref.current) {
-  //         setWidth(ref.current.offsetWidth);
-  //       }
-  //     };
-
-  //     window.addEventListener("resize", handleResize);
-
-  //     return () => {
-  //       window.removeEventListener("resize", handleResize);
-  //     };
-  //   }, []);
-
-  //   useEffect(() => {
-  //     const interval = setInterval(() => {
-  //       console.log(width);
-  //     });
-  //     return () => clearInterval(interval);
-  //   }, [width]);
-
   return (
     <motion.span
-      className="font-bold font-sans text-white-color text-xl relative cursor-pointer group"
+      className="font-bold font-sans text-white-color text-xl relative cursor-pointer group whitespace-nowrap"
       whileHover="hover"
     >
       {children}
-      <motion.div
+      <motion.span
         className="border inline-block w-0 absolute bottom-0 left-0 border-white-color"
         style={{ opacity: opacity }}
         ref={ref}
         variants={lineEffect}
-      ></motion.div>
+      ></motion.span>
     </motion.span>
   );
 }
