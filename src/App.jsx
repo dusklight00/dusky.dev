@@ -9,7 +9,7 @@ import AnimatedCursor from "react-animated-cursor";
 import AboutMe from "./components/AboutMe";
 import ProjectSection from "./components/ProjectSection";
 import NoteProjectSection from "./components/NoteProjectSection";
-import ArticleLink from "./components/ArticleLink";
+import BlogSection from "./components/BlogSection";
 
 function App() {
   return (
@@ -25,7 +25,7 @@ function App() {
       <AboutMe />
       <ProjectSection />
       <NoteProjectSection />
-      <ArticleLink />
+      <BlogSection />
     </div>
   );
 }

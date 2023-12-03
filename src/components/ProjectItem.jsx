@@ -82,12 +82,12 @@ function ProjectItem({ alignment = "left" }) {
               : "z-0 mr-[-50px] w-[570px] rounded relative shadow-lg"
           }
         >
-          {/* <div className="bg-green absolute inset-0 opacity-30 z-20 rounded-lg"></div> */}
+          <div className="bg-background-light-dark-color absolute inset-0 opacity-60 z-20 rounded-lg"></div>
           <img
             src={Image}
             alt="live-digit-recognizer"
             width="100%"
-            className="rounded-md hover:grayscale-0 transition-all"
+            className="rounded-md hover:grayscale-0 transition-all grayscale"
           />
         </div>
       </div>
