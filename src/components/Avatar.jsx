@@ -1,5 +1,5 @@
 import React from "react";
-import AvatarImage from "../assets/avatar.jpg";
+import AvatarImage from "../assets/profile-picture-v2-cropped.jpg";
 import { motion } from "framer-motion";
 
 function Avatar() {
@@ -14,11 +14,10 @@ function Avatar() {
   return (
     <div>
       <motion.div
-        className="relative w-[300px] h-[300px] rounded-lg border-2 border-white-dark-color"
+        className="relative w-[300px] h-[300px] rounded-lg border-2 border-white-dark-color filter grayscale"
         whileHover="hover"
         variants={parentVariants}
       >
-        {/* <motion.div className="absolute inset-0 top-10 border-2 border-white-dark-color"></motion.div> */}
         <motion.img
           src={AvatarImage}
           alt="avatar"

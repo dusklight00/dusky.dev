@@ -10,6 +10,7 @@ import AboutMe from "./components/AboutMe";
 import ProjectSection from "./components/ProjectSection";
 import NoteProjectSection from "./components/NoteProjectSection";
 import BlogSection from "./components/BlogSection";
+import Footer from "./components/Footer";
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
       <ProjectSection />
       <NoteProjectSection />
       <BlogSection />
+      <Footer />
     </div>
   );
 }
