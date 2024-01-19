@@ -11,6 +11,7 @@ import ProjectSection from "./components/ProjectSection";
 import NoteProjectSection from "./components/NoteProjectSection";
 import BlogSection from "./components/BlogSection";
 import Footer from "./components/Footer";
+import ContactMe from "./components/ContactMe";
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
       <ProjectSection />
       <NoteProjectSection />
       <BlogSection />
+      <ContactMe />
       <Footer />
     </div>
   );
