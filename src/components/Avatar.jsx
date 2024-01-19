@@ -14,14 +14,18 @@ function Avatar() {
   return (
     <div>
       <motion.div
-        className="relative w-[300px] h-[300px] rounded-lg border-2 border-white-dark-color filter grayscale"
+        className="relative w-[300px] h-[300px] rounded-lg border-2 border-white-dark-color"
         whileHover="hover"
         variants={parentVariants}
       >
+        <motion.div
+          className="absolute w-full h-full rounded-lg bottom-3 right-3 z-10 backdrop-filter backdrop-grayscale opacity-70 hover:opacity-0 transition-opacity duration-300"
+          variants={childVariants}
+        />
         <motion.img
           src={AvatarImage}
           alt="avatar"
-          className="absolute h-full rounded-lg bottom-3 right-3"
+          className="absolute h-full rounded-lg bottom-3 right-3 filter"
           variants={childVariants}
         />
       </motion.div>
