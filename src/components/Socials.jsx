@@ -7,7 +7,7 @@ function Socials() {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 1, ease: "easeInOut", delay: 4 }}
-      className="fixed flex flex-col gap-4 items-center bottom-0 left-10"
+      className="fixed flex flex-col gap-8 items-center bottom-0 left-10"
     >
       <motion.div
         className="inline-block relative"
@@ -22,7 +22,7 @@ function Socials() {
           strokeWidth="2"
           strokeLinecap="round"
           strokeLinejoin="round"
-          height={35}
+          height={37}
           className="p-2"
           whileHover={{ stroke: "#ECEEF3" }}
         >
@@ -43,7 +43,7 @@ function Socials() {
           strokeWidth="2"
           strokeLinecap="round"
           strokeLinejoin="round"
-          height={35}
+          height={37}
           className="feather feather-instagram p-2"
           whileHover={{ stroke: "#ECEEF3" }}
         >
@@ -66,7 +66,7 @@ function Socials() {
           strokeWidth="2"
           strokeLinecap="round"
           strokeLinejoin="round"
-          height={35}
+          height={37}
           className="feather feather-twitter p-2"
           whileHover={{ stroke: "#ECEEF3" }}
         >
@@ -87,7 +87,7 @@ function Socials() {
           strokeWidth="2"
           strokeLinecap="round"
           strokeLinejoin="round"
-          height={35}
+          height={37}
           className="feather feather-linkedin p-2"
           whileHover={{ stroke: "#ECEEF3" }}
         >
@@ -110,7 +110,7 @@ function Socials() {
           strokeWidth="2"
           strokeLinecap="round"
           strokeLinejoin="round"
-          height={35}
+          height={37}
           className="feather feather-codepen p-2"
           whileHover={{ stroke: "#ECEEF3" }}
         >
