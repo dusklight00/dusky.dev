@@ -10,7 +10,7 @@ function Email() {
       className="fixed flex flex-col gap-4 items-center justify-center bottom-0 right-[-50px]"
     >
       <div
-        className="relative rotate-90 text-sm text-white-dark-color bottom-[125px] hover:bottom-[130px] transition-all hover:text-white-color cursor-pointer duration-200"
+        className="relative rotate-90 text-base text-white-dark-color bottom-[150px] hover:bottom-[155px] transition-all hover:text-white-color cursor-pointer duration-200"
         style={{
           fontFamily:
             "'SF Mono', 'Fira Code', 'Fira Mono', 'Roboto Mono', monospace",
