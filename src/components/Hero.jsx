@@ -56,17 +56,17 @@ function Hero() {
     >
       <div className="h-screen">
         <motion.h1 variants={hi} className="font-mono text-grey-color text-xl">
-          Hi, my name is
+          Hello, I'm
         </motion.h1>
         <motion.h2
           variants={rahul}
-          className="font-sans text-white-color text-[130px] font-black p-0 m-0"
+          className="font-sans text-white-color text-[130px] font-black p-0 m-0 ml-[-6px]"
         >
-          Rahul.
+          Rahul Raj
         </motion.h2>
         <motion.h3
           variants={developer}
-          className="font-sans text-white-color text-[130px] font-black opacity-60 p-0 mt-[-80px]"
+          className="font-sans text-white-color text-[130px] font-black opacity-60 p-0 mt-[-80px] ml-[-6px]"
         >
           <Typewriter
             options={{
@@ -86,6 +86,7 @@ function Hero() {
                 "++i is better.",
                 // "it's one-electron world.",
                 "ghost exists.",
+                "BinarySort();",
               ],
               autoStart: true,
               loop: true,
