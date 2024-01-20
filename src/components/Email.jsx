@@ -7,10 +7,10 @@ function Email() {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 1, ease: "easeInOut", delay: 4 }}
-      className="fixed flex flex-col gap-4 items-center bottom-0 right-[-50px]"
+      className="fixed flex flex-col gap-4 items-center justify-center bottom-0 right-[-50px]"
     >
       <div
-        className="relative rotate-90 text-white-dark-color bottom-[100px] text-xs hover:bottom-[105px] transition-all hover:text-white-color cursor-pointer duration-200"
+        className="relative rotate-90 text-sm text-white-dark-color bottom-[125px] hover:bottom-[130px] transition-all hover:text-white-color cursor-pointer duration-200"
         style={{
           fontFamily:
             "'SF Mono', 'Fira Code', 'Fira Mono', 'Roboto Mono', monospace",
