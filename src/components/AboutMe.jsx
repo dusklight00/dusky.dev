@@ -13,7 +13,7 @@ function AboutMe() {
     >
       <div className="flex-1 flex flex-col">
         <div className="flex items-center gap-10 mt-10">
-          <div className="font-mono text-grey-color text-xl">01.</div>
+          {/* <div className="font-mono text-grey-color text-xl">01.</div> */}
           <div className="font-sans text-white-color h-[50px] text-[40px] font-black flex-2">
             About Me
           </div>
