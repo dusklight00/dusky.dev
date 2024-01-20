@@ -17,6 +17,7 @@ function Navbar() {
         variant="ghost"
         colorScheme="white"
         size="lg"
+        style={{ fontSize: "20px" }}
       >
         Resume
       </Button>

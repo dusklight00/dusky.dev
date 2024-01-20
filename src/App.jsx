@@ -22,7 +22,7 @@ function App() {
       <Loader />
       <Navbar />
       <Socials />
-      <Email />
+      {/* <Email /> */}
       <Hero />
       <AboutMe />
       <ProjectSection />

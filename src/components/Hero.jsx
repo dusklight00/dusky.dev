@@ -55,25 +55,25 @@ function Hero() {
       animate="show"
     >
       <div className="h-screen">
-        <motion.h1 variants={hi} className="font-mono text-grey-color text-xl">
+        <motion.h1 variants={hi} className="font-mono text-grey-color text-2xl">
           Hello, I'm
         </motion.h1>
         <motion.h2
           variants={rahul}
-          className="font-sans text-white-color text-[130px] font-black p-0 m-0 ml-[-6px]"
+          className="font-sans text-white-color text-[120px] font-black p-0 m-0 ml-[-6px]"
         >
           Rahul Raj
         </motion.h2>
         <motion.h3
           variants={developer}
-          className="font-sans text-white-color text-[130px] font-black opacity-60 p-0 mt-[-80px] ml-[-6px]"
+          className="font-sans text-white-color text-[120px] font-black opacity-60 p-0 mt-[-50px] ml-[-6px]"
         >
           <Typewriter
             options={{
               strings: [
-                "developer.",
-                "programmer.",
-                "thinker.",
+                "Coder",
+                "Problem Solver",
+                "Thinker",
                 // "yet another otaku.",
                 // "manga reader.",
                 // "introvert.",
@@ -97,9 +97,9 @@ function Hero() {
         </motion.h3>
         <motion.p
           variants={para}
-          className="font-sans text-white-dark-color text-xl mt-[-40px]"
+          className="font-sans text-white-dark-color text-2xl mt-[-20px]"
         >
-          I’m a software engineer specializing in building (and occasionally
+          I’m a fresher specializing in building (and occasionally
           <br />
           designing) exceptional digital experiences. Currently, I’m focused on
           <br />
