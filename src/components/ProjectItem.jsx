@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "./../assets/live-digit-recognizer.gif";
 
-function ProjectItem({ alignment = "left" }) {
+function ProjectItem({ alignment = "left", title, description, tags }) {
   return (
     <div className="flex justify-center mb-20">
       <div
@@ -20,7 +20,7 @@ function ProjectItem({ alignment = "left" }) {
             Featured Project
           </div>
           <div className="font-sans text-white-color h-[50px] text-4xl font-black flex-2 pt-1">
-            Live Digit Recognizer
+            {title}
           </div>
           <div
             className={
@@ -29,16 +29,12 @@ function ProjectItem({ alignment = "left" }) {
                 : "p-5 bg-background-light-dark-color w-[500px] rounded shadow-md hover:shadow-xl transition-shadow duration-500 text-right text-lg"
             }
           >
-            A project, that use MNIST dataset along with keras merged with web
-            technologies to make a interface that recognize and classifies
-            handritten digits live.
+            {description}
           </div>
           <div className="flex font-mono gap-5 py-5 px-1 text-base text-white-dark-color">
-            <span>VS Code</span>
-            <span>Sublime Text</span>
-            <span>Atom</span>
-            <span>iTerm2</span>
-            <span>Hyper</span>
+            {tags.map((tag) => (
+              <span>{tag}</span>
+            ))}
           </div>
           <div className="flex px-1 gap-5 text-white-dark-color ">
             <svg

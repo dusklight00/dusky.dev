@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 
-function NoteProjectCard() {
+function NoteProjectCard({ title, description, tags }) {
   return (
     <motion.div
       className="bg-background-light-dark-color rounded w-80 px-6 py-7 shadow-md hover:shadow-xl z-50 transition-shadow"
@@ -42,16 +42,15 @@ function NoteProjectCard() {
         </svg>
       </div>
       <div className="font-sans font-bold text-xl text-white-dark-color pt-10 pb-1 hover:text-white-color transition-colors">
-        Building a Headless Mobile App CMS From Scratch
+        {title}
       </div>
       <div className="font-sans text-white-dark-color text-md">
-        Building a custom multisite compatible WordPress plugin to build global
-        search with Algolia.
+        {description}
       </div>
       <div className="font-mono flex gap-2 text-xs text-white-dark-color pt-5">
-        <div>Angolia</div>
-        <div>WordPress</div>
-        <div>PHP</div>
+        {tags.map((tag) => (
+          <div>{tag}</div>
+        ))}
       </div>
     </motion.div>
   );

@@ -11,9 +11,26 @@ function ProjectSection() {
         </div>
         <div className="h-0 flex-1 border border-white-color opacity-5"></div>
       </div>
-      <ProjectItem alignment="right" />
-      <ProjectItem alignment="left" />
-      <ProjectItem alignment="right" />
+      <ProjectItem
+        alignment="right"
+        title="Live Digit Recognizer"
+        description="A project, that use MNIST dataset along with keras merged with web
+            technologies to make a interface that recognize and classifies
+            handritten digits live"
+        tags={["React", "Chakra", "Python", "Flask", "Keras", "MNIST"]}
+      />
+      <ProjectItem
+        alignment="left"
+        title="Hamiltonian Path Finder"
+        description="An interactive interface to find Hamiltoninan Path of any type of grid using concepts of Backtracking"
+        tags={["React", "Chakra", "Python", "Flask", "Backtracking"]}
+      />
+      <ProjectItem
+        alignment="right"
+        title="Chess AI"
+        description="A chess AI that uses minimax algorithm with alpha beta pruning to play chess against human"
+        tags={["Python", "Minimax", "Alpha Beta Pruning"]}
+      />
     </div>
   );
 }
