@@ -1,6 +1,10 @@
 import React from "react";
 import ProjectItem from "./ProjectItem";
 
+import LiveDigitRecognizerImage from "./../assets/live-digit-recognizer.gif";
+import HamiltonianPathFinderImage from "./../assets/hamiltonian-path-finder.gif";
+import ChessAI from "./../assets/chess-ai.gif";
+
 function ProjectSection() {
   return (
     <div>
@@ -18,18 +22,21 @@ function ProjectSection() {
             technologies to make a interface that recognize and classifies
             handritten digits live"
         tags={["React", "Chakra", "Python", "Flask", "Keras", "MNIST"]}
+        image={LiveDigitRecognizerImage}
       />
       <ProjectItem
         alignment="left"
-        title="Hamiltonian Path Finder"
-        description="An interactive interface to find Hamiltoninan Path of any type of grid using concepts of Backtracking"
-        tags={["React", "Chakra", "Python", "Flask", "Backtracking"]}
-      />
-      <ProjectItem
-        alignment="right"
         title="Chess AI"
         description="A chess AI that uses minimax algorithm with alpha beta pruning to play chess against human"
         tags={["Python", "Minimax", "Alpha Beta Pruning"]}
+        image={ChessAI}
+      />
+      <ProjectItem
+        alignment="right"
+        title="Hamiltonian Path Finder"
+        description="An interactive interface to find Hamiltoninan Path of any type of grid using concepts of Backtracking"
+        tags={["React", "Chakra", "Python", "Flask", "Backtracking"]}
+        image={HamiltonianPathFinderImage}
       />
     </div>
   );

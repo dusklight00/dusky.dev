@@ -1,7 +1,6 @@
 import React from "react";
-import Image from "./../assets/live-digit-recognizer.gif";
 
-function ProjectItem({ alignment = "left", title, description, tags }) {
+function ProjectItem({ alignment = "left", title, description, tags, image }) {
   return (
     <div className="flex justify-center mb-20">
       <div
@@ -74,13 +73,13 @@ function ProjectItem({ alignment = "left", title, description, tags }) {
         <div
           className={
             alignment == "left"
-              ? "z-0 ml-[-50px] w-[570px] rounded relative shadow-lg"
-              : "z-0 mr-[-50px] w-[570px] rounded relative shadow-lg"
+              ? "z-0 ml-[-50px] w-[570px] h-[420px] overflow-hidden rounded-lg relative shadow-lg"
+              : "z-0 mr-[-50px] w-[570px] h-[420px] rounded-lg overflow-hidden relative shadow-lg"
           }
         >
           <div className="bg-background-light-dark-color absolute inset-0 opacity-60 z-20 rounded-lg"></div>
           <img
-            src={Image}
+            src={image}
             alt="live-digit-recognizer"
             width="100%"
             className="rounded-md hover:grayscale-0 transition-all grayscale"
