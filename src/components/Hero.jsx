@@ -55,7 +55,7 @@ function Hero() {
       animate="show"
     >
       <div className="h-screen">
-        <motion.h1 variants={hi} className="font-mono text-grey-color text-2xl">
+        <motion.h1 variants={hi} className="font-mono text-grey-color text-3xl">
           Hello, I'm
         </motion.h1>
         <motion.h2

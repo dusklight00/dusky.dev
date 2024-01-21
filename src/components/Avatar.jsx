@@ -14,7 +14,7 @@ function Avatar() {
   return (
     <div>
       <motion.div
-        className="relative w-[300px] h-[300px] rounded-lg border-2 border-white-dark-color"
+        className="relative w-[330px] h-[330px] rounded-lg border-2 border-white-dark-color"
         whileHover="hover"
         variants={parentVariants}
       >
