@@ -1,5 +1,4 @@
 import React from "react";
-import "./contactme.css";
 import { Button } from "@chakra-ui/react";
 
 function ContactMe() {
