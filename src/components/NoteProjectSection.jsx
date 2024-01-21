@@ -8,9 +8,9 @@ function NoteProjectSection() {
     <div className="mt-32">
       <div className="flex items-center flex-col gap-5 mb-10">
         <div className="font-sans text-white-color h-[50px] text-[40px] font-black mx-auto">
-          Other Noteworthy Projects
+          Other Projects
         </div>
-        <Link>view the archieve</Link>
+        <Link>View the Archive</Link>
       </div>
       <div className="grid grid-cols-3 gap-7 w-4/6 mx-auto">
         <NoteProjectCard
@@ -46,7 +46,7 @@ function NoteProjectSection() {
       </div>
       <div className="flex justify-center p-10">
         <Button variant="ghost" colorScheme="white" size="md">
-          Show More
+          Link to Github
         </Button>
       </div>
     </div>
