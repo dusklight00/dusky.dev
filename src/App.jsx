@@ -13,6 +13,7 @@ import BlogSection from "./components/BlogSection";
 import Footer from "./components/Footer";
 import ContactMe from "./components/ContactMe";
 import ExperienceSection from "./components/ExperienceSection";
+import CertificateSection from "./components/CertificateSection";
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
       <Hero />
       <AboutMe />
       <ExperienceSection />
+      <CertificateSection />
       <ProjectSection />
       <NoteProjectSection />
       <BlogSection />

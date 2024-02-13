@@ -2,13 +2,24 @@ import { Gallery } from "react-grid-gallery";
 import SimpleImageSlider from "react-simple-image-slider";
 
 const images = [
-  { url: "./src/assets/at-makeathon/1.jpg" },
-  { url: "./src/assets/at-makeathon/2.jpg" },
-  { url: "./src/assets/at-makeathon/3.jpg" },
-  { url: "./src/assets/at-makeathon/4.jpg" },
-  { url: "./src/assets/at-makeathon/5.jpg" },
-  { url: "./src/assets/at-makeathon/6.jpg" },
-  { url: "./src/assets/at-makeathon/7.jpg" },
+  {
+    src: "https://c2.staticflickr.com/9/8817/28973449265_07e3aa5d2e_b.jpg",
+    width: 320,
+    height: 174,
+    // isSelected: true,
+    caption: "After Rain (Jeshu John - designerspics.com)",
+  },
+  {
+    src: "https://c2.staticflickr.com/9/8356/28897120681_3b2c0f43e0_b.jpg",
+    width: 320,
+    height: 212,
+    alt: "Boats (Jeshu John - designerspics.com)",
+  },
+  {
+    src: "https://c4.staticflickr.com/9/8887/28897124891_98c4fdd82b_b.jpg",
+    width: 320,
+    height: 212,
+  },
 ];
 
 function ExperienceSection() {
@@ -21,19 +32,19 @@ function ExperienceSection() {
         <div className="flex w-max">
           {/* <div className="bg-white-color opacity-[0.1] w-[0.1px]"></div> */}
           <div className="font-mono text-sm w-max">
-            <div className="px-8 py-3 rounded-md hover:bg-navy-color">
+            <div className="px-8 py-3 rounded-md hover:bg-background-light-dark-color">
               Upstatement
             </div>
-            <div className="px-8 py-3 rounded-md hover:bg-navy-color">
+            <div className="px-8 py-3 rounded-md hover:bg-background-light-dark-color">
               Apple
             </div>
-            <div className="px-8 py-3 rounded-md hover:bg-navy-color">
+            <div className="px-8 py-3 rounded-md hover:bg-background-light-dark-color">
               Scout Studio
             </div>
-            <div className="px-8 py-3 rounded-md hover:bg-navy-color">
+            <div className="px-8 py-3 rounded-md hover:bg-background-light-dark-color">
               Starry
             </div>
-            <div className="px-8 py-3 rounded-md hover:bg-navy-color">
+            <div className="px-8 py-3 rounded-md hover:bg-background-light-dark-color">
               MullenLowe
             </div>
           </div>
@@ -64,6 +75,7 @@ function ExperienceSection() {
               business requirements
             </li>
           </ul>
+          {/* <Gallery images={images} style="rounded-lg" /> */}
         </div>
       </div>
     </div>
