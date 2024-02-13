@@ -12,6 +12,7 @@ import NoteProjectSection from "./components/NoteProjectSection";
 import BlogSection from "./components/BlogSection";
 import Footer from "./components/Footer";
 import ContactMe from "./components/ContactMe";
+import ExperienceSection from "./components/ExperienceSection";
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
       {/* <Email /> */}
       <Hero />
       <AboutMe />
+      <ExperienceSection />
       <ProjectSection />
       <NoteProjectSection />
       <BlogSection />
