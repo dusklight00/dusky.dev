@@ -1,25 +1,17 @@
 import { Gallery } from "react-grid-gallery";
 import useEmblaCarousel from "embla-carousel-react";
 import SimpleImageSlider from "react-simple-image-slider";
+import ShowMoreText from "react-show-more-text";
 
 const images = [
   {
-    src: "https://c2.staticflickr.com/9/8817/28973449265_07e3aa5d2e_b.jpg",
-    width: 320,
-    height: 174,
-    // isSelected: true,
-    caption: "After Rain (Jeshu John - designerspics.com)",
+    src: "https://media.licdn.com/dms/image/D5622AQEJNPDEX9EFsw/feedshare-shrink_800/0/1705959325302?e=1710979200&v=beta&t=OvNMgzFM_H7k-tmcrp_tiEHhUqYHtsP2EK_s2ZFMSUk",
   },
   {
-    src: "https://c2.staticflickr.com/9/8356/28897120681_3b2c0f43e0_b.jpg",
-    width: 320,
-    height: 212,
-    alt: "Boats (Jeshu John - designerspics.com)",
+    src: "https://media.licdn.com/dms/image/D5622AQH6WKZcTGaKCQ/feedshare-shrink_800/0/1705959322828?e=1710979200&v=beta&t=NfEYc2XMFNRFI0T9f4VlayzOcgwPmJUs_K0Ar42M7Gs",
   },
   {
-    src: "https://c4.staticflickr.com/9/8887/28897124891_98c4fdd82b_b.jpg",
-    width: 320,
-    height: 212,
+    src: "https://media.licdn.com/dms/image/D5622AQG8-WwbH2tYbA/feedshare-shrink_800/0/1705959303384?e=1710979200&v=beta&t=jZH-UrUwmhqAfTcatBTjwwr2ltlsl3mRMt2hFFxWoEQ",
   },
 ];
 
@@ -40,7 +32,11 @@ const Slider = ({ children, options }) => {
   );
 };
 
-function LinkedInCard() {
+function HoverLink({ children }) {
+  return <span className="font-bold hover:underline">{children}</span>;
+}
+
+function LinkedInCard({ imgURL, children, likes, comments }) {
   return (
     <div className="border rounded-lg p-5 flex flex-col w-[550px] gap-3">
       <div className="flex gap-4 items-center">
@@ -59,32 +55,11 @@ function LinkedInCard() {
           <div className="text-white-dark-color">Learner</div>
         </div>
       </div>
-      <div>
-        I'm excited to announce our success at the AT Makeathon 2024 conducted
-        by Shaastra, IIT Madras! 🚀🔧 From the initial idea presentation to
-        showcasing a fully-fledged prototype in front of esteemed judges, the
-        journey was nothing short of exhilarating. I'm grateful to have shared
-        this incredible experience with my fantastic teammates, Sairaj Todkar
-        and Srijani M. 🙌🏼👥 Srijani M opening speech at the project presentation
-        instantly grabbed the audience's attention with her articulate
-        storytelling and passion, setting a strong foundation. Sairaj Todkar
-        creative additions took the project to another level, seamlessly
-        blending visuals and innovation. Together, their synergy created a
-        compelling and memorable presentation that resonated intellectually and
-        emotionally, leaving a lasting impression on the audience. Together, we
-        not only participated but secured the 2nd place! 🥈 The synergy within
-        our team was the driving force behind this achievement, and I'm truly
-        fortunate to have found such an awesome and talented group. The journey
-        was not just about winning but also about the camaraderie, learning,
-        and, of course, a lot of fun! 🎉💡 A big thank you to Shaastra, IIT
-        Madras for organizing this fantastic event that provided a platform for
-        innovation and collaboration. The memories created and lessons learned
-        will be cherished forever. 🌐🏆 Looking forward to more opportunities to
-        collaborate, innovate, and have fun in the future! Onwards and upwards!
-        💪🏼🚀 hashtag#ATMakeathon2024 hashtag#Shaastra2024 hashtag#Innovation
-        hashtag#Winners hashtag#Teamwork hashtag#Grateful hashtag#IITMadras
-        hashtag#Prototype hashtag#TechInnovation hashtag#FunTimes
-        <Gallery images={images} />
+      <div className="flex flex-col gap-4">
+        <ShowMoreText>
+          <div className="flex flex-col gap-3">{children}</div>
+        </ShowMoreText>
+        <img src={imgURL} alt="" />
       </div>
       <hr />
       <div>
@@ -112,10 +87,10 @@ function LinkedInCard() {
               />
             </div>
           </div>
-          <div className="text-xs text-white-dark-color flex-1">
-            Syad Mohammad and 22 others
+          <div className="text-xs text-white-dark-color flex-1">{likes}</div>
+          <div className="text-sm text-white-dark-color">
+            {comments} Comments
           </div>
-          <div className="text-sm text-white-dark-color">22 Comments</div>
         </div>
       </div>
       {/* <hr /> */}
@@ -132,7 +107,67 @@ function HackathonSection() {
       <div className="relative">
         <Slider>
           <div className="flex-[0_0_90%] md:flex-[0_0_40%]">
-            <LinkedInCard />
+            <LinkedInCard
+              likes="Syad Mohammad and 22 others"
+              comments="22"
+              imgURL="https://media.licdn.com/dms/image/D5622AQH6WKZcTGaKCQ/feedshare-shrink_800/0/1705959322828?e=1710979200&v=beta&t=NfEYc2XMFNRFI0T9f4VlayzOcgwPmJUs_K0Ar42M7Gs"
+            >
+              <p>
+                I'm excited to announce our success at the AT Makeathon 2024
+                conducted by <HoverLink>Shaastra, IIT Madras!</HoverLink> 🚀🔧
+              </p>
+              <p>
+                From the initial idea presentation to showcasing a fully-fledged
+                prototype in front of esteemed judges, the journey was nothing
+                short of exhilarating. I'm grateful to have shared this
+                incredible experience with my fantastic teammates,{" "}
+                <HoverLink>Sairaj Todkar</HoverLink> and{" "}
+                <HoverLink>Srijani M.</HoverLink> 🙌🏼👥
+              </p>
+              <p>
+                <HoverLink>Srijani M</HoverLink> opening speech at the project
+                presentation instantly grabbed the audience's attention with her
+                articulate storytelling and passion, setting a strong
+                foundation.
+              </p>
+              <p>
+                <HoverLink>Sairaj Todkar</HoverLink> creative additions took the
+                project to another level, seamlessly blending visuals and
+                innovation.
+              </p>
+              <p>
+                Together, their synergy created a compelling and memorable
+                presentation that resonated intellectually and emotionally,
+                leaving a lasting impression on the audience. Together, we not
+                only participated but secured the 2nd place! 🥈 The synergy
+                within our team was the driving force behind this achievement,
+                and I'm truly fortunate to have found such an awesome and
+                talented group. The journey was not just about winning but also
+                about the camaraderie, learning, and, of course, a lot of fun!
+                🎉💡
+              </p>
+              <p>
+                A big thank you to <HoverLink>Shaastra, IIT Madras</HoverLink>{" "}
+                for organizing this fantastic event that provided a platform for
+                innovation and collaboration. The memories created and lessons
+                learned will be cherished forever. 🌐🏆
+              </p>
+              <p>
+                Looking forward to more opportunities to collaborate, innovate,
+                and have fun in the future! Onwards and upwards! 💪🏼🚀
+              </p>
+              <p>
+                <HoverLink>#ATMakeathon2024</HoverLink>{" "}
+                <HoverLink>#Shaastra2024</HoverLink>{" "}
+                <HoverLink>#Innovation</HoverLink>{" "}
+                <HoverLink>#Winners</HoverLink> <HoverLink>#Teamwork</HoverLink>
+                <HoverLink>#Grateful</HoverLink>{" "}
+                <HoverLink>#IITMadras</HoverLink>{" "}
+                <HoverLink>#Prototype</HoverLink>{" "}
+                <HoverLink>#TechInnovation</HoverLink>{" "}
+                <HoverLink>#FunTimes</HoverLink>
+              </p>
+            </LinkedInCard>
           </div>
           <div className="flex-[0_0_90%] md:flex-[0_0_40%]">
             <LinkedInCard />
