@@ -12,8 +12,10 @@ import NoteProjectSection from "./components/NoteProjectSection";
 import BlogSection from "./components/BlogSection";
 import Footer from "./components/Footer";
 import ContactMe from "./components/ContactMe";
-import ExperienceSection from "./components/ExperienceSection";
+import HackathonSection from "./components/HackathonSection";
 import CertificateSection from "./components/CertificateSection";
+
+import { LinkedInEmbed } from "react-social-media-embed";
 
 function App() {
   return (
@@ -27,7 +29,7 @@ function App() {
       {/* <Email /> */}
       <Hero />
       <AboutMe />
-      <ExperienceSection />
+      <HackathonSection />
       <CertificateSection />
       <ProjectSection />
       <NoteProjectSection />

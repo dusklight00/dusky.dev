@@ -12,6 +12,7 @@
   "dependencies": {
     "@chakra-ui/icons": "^2.1.1",
     "@chakra-ui/react": "^2.8.2",
+    "embla-carousel-react": "^8.0.0-rc22",
     "framer-motion": "^10.16.7",
     "react": "^18.2.0",
     "react-animated-cursor": "^2.11.2",
@@ -20,6 +21,7 @@
     "react-gridlines": "^1.1.7",
     "react-rough-notation": "^1.0.5",
     "react-simple-image-slider": "^2.4.1",
+    "react-social-media-embed": "^2.5.9",
     "styled-components": "^6.1.1",
     "typewriter-effect": "^2.21.0"
   },
