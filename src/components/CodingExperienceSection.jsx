@@ -129,6 +129,7 @@ function CodingExperienceSection() {
         <CodingCard
           platform="GeeksForGeeks"
           description="GeeksforGeeks is a leading platform that provides computer science resources and coding challenges for programmers and technology enthusiasts, along with interview and exam preparations for upcoming aspirants. With a strong emphasis on enhancing coding skills and knowledge, it has become a trusted destination for over 12 million plus"
+          link="https://auth.geeksforgeeks.org/user/rrahulde6stw"
         >
           <svg
             fill="#000000"
@@ -145,6 +146,7 @@ function CodingExperienceSection() {
         <CodingCard
           platform="Github"
           description="It lets developers collaborate on a project more effectively by providing tools for managing possibly conflicting changes from multiple developers. GitHub allows developers to change, adapt and improve software from its public repositories for free, but it charges for private repositories, offering various paid plans"
+          link="https://github.com/dusklight00"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
