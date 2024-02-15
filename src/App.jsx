@@ -14,6 +14,7 @@ import Footer from "./components/Footer";
 import ContactMe from "./components/ContactMe";
 import HackathonSection from "./components/HackathonSection";
 import CertificateSection from "./components/CertificateSection";
+import CodingExperienceSection from "./components/CodingExperienceSection";
 
 import { LinkedInEmbed } from "react-social-media-embed";
 
@@ -29,6 +30,7 @@ function App() {
       {/* <Email /> */}
       <Hero />
       <AboutMe />
+      <CodingExperienceSection />
       <HackathonSection />
       <CertificateSection />
       <ProjectSection />
