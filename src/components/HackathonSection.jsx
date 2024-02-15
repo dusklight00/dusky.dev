@@ -469,27 +469,6 @@ function HackathonSection() {
           <LinkedInCard
             likes="Amritangshu Dey and 11 others"
             comments="1"
-            imgURL="https://media.licdn.com/dms/image/D5622AQHZo8BXZct8RA/feedshare-shrink_2048_1536/0/1704043331731?e=1710979200&v=beta&t=DMlfEQmpqSBV40NBOFxhouhdOxj85E9skXvSzSPU_VE"
-          >
-            <p>
-              Grateful to have teamed up with{" "}
-              <HoverLink>Sairaj Todkar</HoverLink>,{" "}
-              <HoverLink>Paurush Kumar</HoverLink>,
-              <HoverLink>Srijani M</HoverLink> and{" "}
-              <HoverLink>Rimi Jha</HoverLink> for the EY Hackathon. Though we
-              didn't reach the end, your passion, creativity, and expertise made
-              the journey worthwhile. Looking forward to more collaborations and
-              celebrating victories together. Onwards and upwards! 🚀
-            </p>
-            <p>
-              <HoverLink>#TeamSpirit</HoverLink>{" "}
-              <HoverLink>#InnovationJourney</HoverLink>{" "}
-              <HoverLink>#Gratitude</HoverLink>
-            </p>
-          </LinkedInCard>
-          <LinkedInCard
-            likes="Amritangshu Dey and 11 others"
-            comments="1"
             imgURL="http://localhost:5173/src/assets/certificates/ey-hackathon.png"
           >
             <p>

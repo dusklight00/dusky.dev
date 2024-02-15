@@ -4,6 +4,16 @@ import { Button } from "@chakra-ui/react";
 import { DownloadIcon } from "@chakra-ui/icons";
 
 function Navbar() {
+  const onButtonClick = () => {
+    const pdfUrl = "Rahul___Resume.pdf";
+    const link = document.createElement("a");
+    link.href = pdfUrl;
+    link.download = "document.pdf"; // specify the filename
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
   return (
     <motion.nav
       initial={{ opacity: 0 }}
@@ -18,6 +28,7 @@ function Navbar() {
         colorScheme="white"
         size="lg"
         style={{ fontSize: "20px" }}
+        onClick={onButtonClick}
       >
         Resume
       </Button>

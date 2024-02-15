@@ -132,7 +132,6 @@ function CodingExperienceSection() {
           link="https://auth.geeksforgeeks.org/user/rrahulde6stw"
         >
           <svg
-            fill="#000000"
             width="50px"
             height="50px"
             viewBox="0 0 24 24"
