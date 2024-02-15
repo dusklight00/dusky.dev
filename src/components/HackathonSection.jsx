@@ -170,10 +170,195 @@ function HackathonSection() {
             </LinkedInCard>
           </div>
           <div className="flex-[0_0_90%] md:flex-[0_0_40%]">
-            <LinkedInCard />
+            <LinkedInCard
+              likes="Kushal Nm and 18 others"
+              comments="2"
+              imgURL="https://media.licdn.com/dms/image/D5622AQEGGhDxVCXCGA/feedshare-shrink_800/0/1704041005991?e=1710979200&v=beta&t=DImUxTDFv5xVLJ7uTrk5ihwmscahUl34GQXpJVqOs1Y"
+            >
+              <p>🚀 Conquering Code Debug Competition Journey! 💻</p>
+              <p>
+                Reflecting on a pivotal moment this year, I'm thrilled to share
+                our triumph at the Code Debug Competition alongside my coding
+                partner in crime, <HoverLink>Sairaj Todkar</HoverLink>. Through
+                three intense rounds against 100+ teams in Karnataka, we
+                navigated the coding challenges with skill and determination. 🏆
+              </p>
+              <p>🔍 Round 1: MCQs & Coding Questions</p>
+              <p>🐜 Round 2: Debugging Challenges</p>
+              <p>🔄 Round 3: Find and Replace in C++, Java, and Python</p>
+              <p>
+                The final round pushed our limits as we executed intricate
+                find-and-replace tasks across multiple programming languages.
+              </p>
+              <p>
+                Against all odds, we secured a coveted spot in the top 15, a
+                testament to our dedication and teamwork. This experience has
+                been more than a competition; it's been a journey of growth,
+                learning, and building confidence.
+              </p>
+              <p>
+                A huge shoutout to <HoverLink>Sairaj Todkar</HoverLink>, my
+                coding partner, for the shared enthusiasm and determination that
+                propelled us forward. Here's to more coding adventures,
+                challenges, and victories in the chapters yet to unfold! 💻🚀
+              </p>
+              <p>
+                <HoverLink>#CodeDebugChampions</HoverLink>{" "}
+                <HoverLink>#TeamCodingSpirit</HoverLink>{" "}
+                <HoverLink>#NewYearReflections</HoverLink>
+              </p>
+            </LinkedInCard>
           </div>
           <div className="flex-[0_0_90%] md:flex-[0_0_40%]">
-            <LinkedInCard />
+            <LinkedInCard
+              likes="Amritangshu Dey and 18 others"
+              comments="2"
+              imgURL="https://media.licdn.com/dms/image/D5622AQEOA2Tz-XQdmg/feedshare-shrink_800/0/1704034177278?e=1710979200&v=beta&t=s_GisOWXa66IK6CakV8FpfU84I65Q0VDiQHFt0cbDeQ"
+            >
+              <p>🌟 Reflecting on a Year of Achievements and Gratitude 🌟</p>
+              <p>
+                As the year comes to a close, I can't help but feel immense
+                gratitude for the incredible journey we've had. 🙌 Last January
+                24th marked a milestone for our team – we were shortlisted for
+                Event CHOSS 2023 at the Cambridge Institute of Technology.
+              </p>
+              <p>
+                My teammates Sairaj Todkar, Srijani M and Rimi Jha, your
+                unwavering dedication and contributions filled this journey with
+                purpose and meaning. Each one of you guys played a vital role in
+                securing our spot among the top 50 teams, and for that, I am
+                truly grateful. 🚀
+              </p>
+              <p>
+                As we bid farewell to this remarkable year, I want to express my
+                heartfelt thanks to my amazing team. Your hard work and
+                commitment have not only shaped our success but have created
+                memories that will last a lifetime. 🌈
+              </p>
+              <p>
+                Here's to more adventures, growth, and shared successes in the
+                coming year! 🥂 Wishing everyone a Happy New Year filled with
+                joy, fulfillment, and continued achievements. 🎉
+              </p>
+              <p>
+                <HoverLink>#Gratitude</HoverLink>
+                <HoverLink>#TeamSuccess</HoverLink>
+                <HoverLink>#NewYearJourney</HoverLink>
+              </p>
+            </LinkedInCard>
+          </div>
+          <div className="flex-[0_0_90%] md:flex-[0_0_40%]">
+            <LinkedInCard
+              likes="Amritangshu Dey and 11 others"
+              comments="1"
+              imgURL="https://media.licdn.com/dms/image/D5622AQF5TwNBA4Zwfg/feedshare-shrink_800/0/1704039381111?e=1710979200&v=beta&t=EXxVYab0IhttgdHO_IPYdOWvO9Gwjsa1OV_IZZ7fGbE"
+            >
+              <p>🚀 Reflecting on RLJIT Idea Presentation Adventure! 🌐</p>
+              <p>
+                As we navigate through the tapestry of this extraordinary year,
+                one event that significantly colored our journey was the RLJIT
+                Idea Presentation. Alongside my buddy{" "}
+                <HoverLink>Sairaj Todkar</HoverLink> and our incredible partners{" "}
+                <HoverLink>Srijani M</HoverLink> and{" "}
+                <HoverLink>Rimi Jha</HoverLink>, we unveiled our innovative idea
+                rooted in AI and Machine Learning in a spirited competition
+                against 50+ talented teams and over 200 participants from across
+                Bangalore. 🤖
+              </p>
+              <p>
+                A special shoutout to <HoverLink>Sairaj Todkar</HoverLink>,
+                whose shared enthusiasm and collaborative spirit were the
+                driving forces behind our success. 🌟
+              </p>
+              <p>
+                Surrounded by brilliant minds and creative solutions, we stood
+                tall, presenting our idea with passion and conviction. The
+                atmosphere was electric, and the exchange of ideas was nothing
+                short of inspiring.
+              </p>
+              <p>
+                As we step into a new chapter, I carry with me the lessons,
+                memories, and a deep appreciation for the camaraderie that
+                fueled our RLJIT journey. Here's to more innovation,
+                collaboration, and shared successes in the events yet to unfold!
+              </p>
+              <p>
+                🚀💡 <HoverLink>#RLJITInnovation</HoverLink>{" "}
+                <HoverLink>#AIandML</HoverLink>{" "}
+                <HoverLink>#TeamSpirit</HoverLink>
+                <HoverLink>#NewYearReflections</HoverLink>
+              </p>
+            </LinkedInCard>
+          </div>
+          <div className="flex-[0_0_90%] md:flex-[0_0_40%]">
+            <LinkedInCard
+              likes="Amritangshu Dey and 11 others"
+              comments="1"
+              imgURL="https://media.licdn.com/dms/image/D5622AQFvJrts8nx3fQ/feedshare-shrink_800/0/1704035128475?e=1710979200&v=beta&t=PTCYdJqlhyYShBsnEjDI8z2tTINMnM4Em-NMV3JOXSA"
+            >
+              <p>🏆 Celebrating a Big Win in Coding! 🚀</p>
+              <p>
+                As we say goodbye to 2023, there's a special moment I can't
+                forget – winning FIRST place at the Code to Decode event on
+                February 4th in our college-level coding competition!
+              </p>
+              <p>
+                Hats off to my awesome teammates, Srijani M and Yuvraj Singh –
+                your coding skills and teamwork pushed us to the top. 🥇 Your
+                hard work and love for coding made this victory super sweet.
+              </p>
+              <p>
+                This year was full of ups and downs, but this win stands out.
+                I'm grateful for such cool teammates. Here's to the many lines
+                of code, late-night problem-solving, and all the teamwork that
+                got us here.
+              </p>
+              <p>
+                As we step into a new year, I'm carrying this win with a big
+                smile and a thankful heart. Excited for more coding adventures,
+                learning, and wins ahead! 🌐💻
+              </p>
+              <p>
+                <HoverLink>#CodeWin</HoverLink>
+                <HoverLink>#TeamAwesome</HoverLink>{" "}
+                <HoverLink>#NewYearCheers</HoverLink>
+              </p>
+            </LinkedInCard>
+          </div>
+          <div className="flex-[0_0_90%] md:flex-[0_0_40%]">
+            <LinkedInCard
+              likes="Amritangshu Dey and 11 others"
+              comments="1"
+              imgURL="https://media.licdn.com/dms/image/D5622AQFvJrts8nx3fQ/feedshare-shrink_800/0/1704035128475?e=1710979200&v=beta&t=PTCYdJqlhyYShBsnEjDI8z2tTINMnM4Em-NMV3JOXSA"
+            >
+              <p>🏆 Celebrating a Big Win in Coding! 🚀</p>
+              <p>
+                As we say goodbye to 2023, there's a special moment I can't
+                forget – winning FIRST place at the Code to Decode event on
+                February 4th in our college-level coding competition!
+              </p>
+              <p>
+                Hats off to my awesome teammates, Srijani M and Yuvraj Singh –
+                your coding skills and teamwork pushed us to the top. 🥇 Your
+                hard work and love for coding made this victory super sweet.
+              </p>
+              <p>
+                This year was full of ups and downs, but this win stands out.
+                I'm grateful for such cool teammates. Here's to the many lines
+                of code, late-night problem-solving, and all the teamwork that
+                got us here.
+              </p>
+              <p>
+                As we step into a new year, I'm carrying this win with a big
+                smile and a thankful heart. Excited for more coding adventures,
+                learning, and wins ahead! 🌐💻
+              </p>
+              <p>
+                <HoverLink>#CodeWin</HoverLink>
+                <HoverLink>#TeamAwesome</HoverLink>{" "}
+                <HoverLink>#NewYearCheers</HoverLink>
+              </p>
+            </LinkedInCard>
           </div>
         </Slider>
         {/* <div className="absolute top-0 right-0 h-full w-[400px] bg-gradient-to-l from-[#1a202c] to-transparent"></div> */}
