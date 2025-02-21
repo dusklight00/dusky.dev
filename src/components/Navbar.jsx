@@ -2,8 +2,11 @@ import React from "react";
 import { motion } from "framer-motion";
 import { Button } from "@chakra-ui/react";
 import { DownloadIcon } from "@chakra-ui/icons";
+import { useColorMode } from "@chakra-ui/react";
 
 function Navbar() {
+  const { colorMode, toggleColorMode } = useColorMode();
+
   const onButtonClick = () => {
     const pdfUrl = "Rahul___Resume.pdf";
     const link = document.createElement("a");
@@ -32,7 +35,10 @@ function Navbar() {
       >
         Resume
       </Button>
-      <button className="p-2 rounded-lg bg-body-800 hover:bg-body-700 outline outline-1 outline-navy-color outline-body-700 transition-all bg-navy-dark-color z-10 hover:bg-navy-color">
+      <button
+        onClick={toggleColorMode}
+        className="p-2 rounded-lg bg-body-800 hover:bg-body-700 outline outline-1 outline-navy-color outline-body-700 transition-all bg-navy-dark-color z-10 hover:bg-navy-color"
+      >
         <svg
           stroke="currentColor"
           fill="#ECEEF3"
