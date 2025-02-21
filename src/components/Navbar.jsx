@@ -37,11 +37,15 @@ function Navbar() {
       </Button>
       <button
         onClick={toggleColorMode}
-        className="p-2 rounded-lg bg-body-800 hover:bg-body-700 outline outline-1 outline-navy-color outline-body-700 transition-all bg-navy-dark-color z-10 hover:bg-navy-color"
+        className={
+          colorMode == "dark"
+            ? "p-2 rounded-lg bg-body-800 hover:bg-body-700 outline outline-1 outline-navy-color outline-body-700 transition-all bg-navy-dark-color z-10 hover:bg-navy-color"
+            : "p-2 rounded-lg bg-body-800 hover:bg-body-700 outline outline-1 outline-slate-200 outline-body-700 transition-all bg-slate-200 z-10 hover:bg-slate-300"
+        }
       >
         <svg
           stroke="currentColor"
-          fill="#ECEEF3"
+          fill={colorMode == "dark" ? "#ECEEF3" : "#12151c"}
           strokeWidth="0"
           viewBox="0 0 20 20"
           height="30px"
