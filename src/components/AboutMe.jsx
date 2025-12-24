@@ -2,8 +2,13 @@ import React from "react";
 import Link from "./Link";
 import Avatar from "./Avatar";
 import { motion } from "framer-motion";
+import { useColorModeValue } from "@chakra-ui/react";
 
 function AboutMe() {
+  const headingColor = useColorModeValue("#1A202C", "#ECEEF3");
+  const textColor = useColorModeValue("#4A5568", "#ACB2C9");
+  const dividerColor = useColorModeValue("#E2E8F0", "#ECEEF3");
+
   return (
     <motion.div
       className="flex items-center gap-24 mx-64 h-screen"
@@ -14,13 +19,19 @@ function AboutMe() {
       <div className="flex-1 flex flex-col">
         <div className="flex items-center gap-10 mt-10">
           {/* <div className="font-mono text-grey-color text-xl">01.</div> */}
-          <div className="font-sans text-white-color h-[50px] text-6xl font-black flex-2">
+          <div
+            className="font-sans h-[50px] text-6xl font-black flex-2"
+            style={{ color: headingColor }}
+          >
             About Me
           </div>
-          <div className="h-0 flex-1 border border-white-color opacity-5"></div>
+          <div
+            className="h-0 flex-1 border opacity-5"
+            style={{ borderColor: dividerColor }}
+          ></div>
         </div>
         <div className="flex gap-10 w-full">
-          <div className="font-sans text-white-dark-color text-2xl">
+          <div className="font-sans text-2xl" style={{ color: textColor }}>
             <p className="mt-10">
               Hello! My name is Rahul and I enjoy creating things that live on
               the internet. My interest in web development started back in 2012
@@ -29,7 +40,7 @@ function AboutMe() {
               about HTML & CSS!
             </p>
             {/* <p className="mt-10 text-2xl">
-              Fast-forward to today, and I’ve had the privilege of working at an
+              Fast-forward to today, and I've had the privilege of working at an
               advertising agency, <Link>a start-up</Link>,{" "}
               <Link>a huge corporation</Link>, and{" "}
               <Link>a student-led design studio</Link>. My main focus these days
@@ -41,7 +52,7 @@ function AboutMe() {
               to build a web app with the Spotify API using Node & React
             </p>
             {/* <p className="mt-10">
-          Here are a few technologies I’ve been working with recently:
+          Here are a few technologies I've been working with recently:
         </p> */}
           </div>
         </div>

@@ -1,8 +1,13 @@
 import React from "react";
 import { motion } from "framer-motion";
 import Typewriter from "typewriter-effect";
+import { useColorModeValue } from "@chakra-ui/react";
 
 function Hero() {
+  const greyColor = useColorModeValue("#718096", "#6e7ba0");
+  const whiteColor = useColorModeValue("#1A202C", "#ECEEF3");
+  const whiteDarkColor = useColorModeValue("#4A5568", "#ACB2C9");
+
   const hi = {
     hidden: { opacity: 0, y: 50 },
     show: {
@@ -55,18 +60,24 @@ function Hero() {
       animate="show"
     >
       <div className="h-screen">
-        <motion.h1 variants={hi} className="font-mono text-grey-color text-3xl">
+        <motion.h1
+          variants={hi}
+          className="font-mono text-3xl"
+          style={{ color: greyColor }}
+        >
           Hello, I'm
         </motion.h1>
         <motion.h2
           variants={rahul}
-          className="font-sans text-white-color text-[120px] font-black p-0 m-0 ml-[-6px]"
+          className="font-sans text-[120px] font-black p-0 m-0 ml-[-6px]"
+          style={{ color: whiteColor }}
         >
           Rahul Raj
         </motion.h2>
         <motion.h3
           variants={developer}
-          className="font-sans text-white-color text-[120px] font-black opacity-60 p-0 mt-[-50px] ml-[-6px]"
+          className="font-sans text-[120px] font-black opacity-60 p-0 mt-[-50px] ml-[-6px]"
+          style={{ color: whiteColor }}
         >
           <Typewriter
             options={{
@@ -97,11 +108,12 @@ function Hero() {
         </motion.h3>
         <motion.p
           variants={para}
-          className="font-sans text-white-dark-color text-2xl mt-[-20px]"
+          className="font-sans text-2xl mt-[-20px]"
+          style={{ color: whiteDarkColor }}
         >
-          I’m a fresher specializing in building (and occasionally
+          I'm a fresher specializing in building (and occasionally
           <br />
-          designing) exceptional digital experiences. Currently, I’m focused on
+          designing) exceptional digital experiences. Currently, I'm focused on
           <br />
           learning, growing my skills, and build new ideas!
         </motion.p>

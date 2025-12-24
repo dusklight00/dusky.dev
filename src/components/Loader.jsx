@@ -1,8 +1,9 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { useColorModeValue } from "@chakra-ui/react";
 
 function Loader() {
-  const color = "#ACB2C9";
+  const color = useColorModeValue("#4A5568", "#ACB2C9");
 
   const border = {
     hidden: {

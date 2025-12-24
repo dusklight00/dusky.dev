@@ -1,19 +1,23 @@
 import React from "react";
 import ProjectItem from "./ProjectItem";
+import { useColorModeValue } from "@chakra-ui/react";
 
 import LiveDigitRecognizerImage from "./../assets/live-digit-recognizer.gif";
 import HamiltonianPathFinderImage from "./../assets/hamiltonian-path-finder.gif";
 import ChessAI from "./../assets/chess-ai.gif";
 
 function ProjectSection() {
+  const headingColor = useColorModeValue("#1A202C", "#ECEEF3");
+  const dividerColor = useColorModeValue("#E2E8F0", "#ECEEF3");
+
   return (
     <div>
       <div className="flex items-center gap-10 mt-10 ml-60 w-[700px] my-20">
         {/* <div className="font-mono text-grey-color text-xl">02.</div> */}
-        <div className="font-sans text-white-color h-[50px] text-[50px] font-black flex-2 pl-3">
+        <div className="font-sans h-[50px] text-[50px] font-black flex-2 pl-3" style={{ color: headingColor }}>
           Projects
         </div>
-        <div className="h-0 flex-1 border border-white-color opacity-5"></div>
+        <div className="h-0 flex-1 border opacity-5" style={{ borderColor: dividerColor }}></div>
       </div>
       <ProjectItem
         alignment="right"

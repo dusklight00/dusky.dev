@@ -1,8 +1,11 @@
 import React from "react";
 import AvatarImage from "../assets/profile-picture.jpg";
 import { motion } from "framer-motion";
+import { useColorModeValue } from "@chakra-ui/react";
 
 function Avatar() {
+  const borderColor = useColorModeValue("#4A5568", "#ACB2C9");
+
   const childVariants = {
     hover: { x: -10, y: -10 },
   };
@@ -14,7 +17,8 @@ function Avatar() {
   return (
     <div>
       <motion.div
-        className="relative w-[330px] h-[330px] rounded-lg border-2 border-white-dark-color"
+        className="relative w-[330px] h-[330px] rounded-lg border-2"
+        style={{ borderColor: borderColor }}
         whileHover="hover"
         variants={parentVariants}
       >

@@ -1,10 +1,14 @@
 import React, { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
+import { useColorModeValue } from "@chakra-ui/react";
 
 function Link({ children }) {
   const [width, setWidth] = useState(0);
   const [opacity, setOpacity] = useState(1);
   const ref = useRef(null);
+
+  const textColor = useColorModeValue("#1A202C", "#ECEEF3");
+  const lineColor = useColorModeValue("#1A202C", "#ECEEF3");
 
   const lineEffect = {
     hover: {
@@ -28,13 +32,14 @@ function Link({ children }) {
 
   return (
     <motion.span
-      className="font-sans text-white-color text-2xl relative group whitespace-nowrap"
+      className="font-sans text-2xl relative group whitespace-nowrap"
+      style={{ color: textColor }}
       whileHover="hover"
     >
       {children}
       <motion.span
-        className="border inline-block w-0 absolute bottom-0 left-0 border-white-color"
-        style={{ opacity: opacity }}
+        className="border inline-block w-0 absolute bottom-0 left-0"
+        style={{ opacity: opacity, borderColor: lineColor }}
         ref={ref}
         variants={lineEffect}
       ></motion.span>
