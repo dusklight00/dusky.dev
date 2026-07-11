@@ -30,12 +30,12 @@ function App() {
       {/* <Email /> */}
       <Hero />
       <AboutMe />
-      <CodingExperienceSection />
-      <HackathonSection />
-      <CertificateSection />
+      {/* <CodingExperienceSection /> */}
+      {/* <HackathonSection /> */}
+      {/* <CertificateSection /> */}
       <ProjectSection />
       <NoteProjectSection />
-      <BlogSection />
+      {/* <BlogSection /> */}
       <ContactMe />
       <Footer />
     </div>
