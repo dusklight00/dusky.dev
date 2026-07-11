@@ -1,79 +1,102 @@
 import React from "react";
-import { Button } from "@chakra-ui/react";
+import {
+  Box,
+  Button,
+  Container,
+  FormControl,
+  FormLabel,
+  Heading,
+  Input,
+  Text,
+  Textarea,
+  useColorModeValue,
+} from "@chakra-ui/react";
 
 function ContactMe() {
+  const headingColor = useColorModeValue("#1A202C", "#ECEEF3");
+  const bodyColor = useColorModeValue("#4A5568", "#ACB2C9");
+  const labelColor = useColorModeValue("#1A202C", "#ECEEF3");
+  const panelBg = useColorModeValue("#FFFFFF", "#1A202C");
+  const borderColor = useColorModeValue("#E2E8F0", "#2D3748");
+  const inputBg = useColorModeValue("#F7FAFC", "#232A3A");
+  const inputColor = useColorModeValue("#1A202C", "#ECEEF3");
+  const placeholderColor = useColorModeValue("#718096", "#ACB2C9");
+
   return (
-    <div>
-      <div class="py-8 lg:py-16 px-4 mx-auto max-w-screen-md">
-        <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-center text-gray-900 dark:text-white">
-          Contact Me
-        </h2>
-        <p class="mb-8 lg:mb-16 font-light text-center text-gray-500 dark:text-gray-400 sm:text-xl">
-          Got a technical issue? Want to talk about a certain anime? Collaborate
-          on your next project? Let me know.
-        </p>
-        <form
-          action="https://formspree.io/f/xnqenrvl"
-          class="space-y-8"
-          method="POST"
+    <Box as="section" py={16} px={4}>
+      <Container maxW="container.md">
+        <Box
+          borderWidth="1px"
+          borderColor={borderColor}
+          bg={panelBg}
+          rounded="3xl"
+          p={{ base: 6, md: 10 }}
+          shadow="xl"
         >
-          <div>
-            <label
-              for="email"
-              class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
-            >
-              Your email
-            </label>
-            <input
-              type="email"
-              id="email"
-              name="email"
-              class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light"
-              placeholder="name@gmail.com"
-              required
-            />
-          </div>
-          <div>
-            <label
-              for="subject"
-              class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
-            >
-              Subject
-            </label>
-            <input
-              type="text"
-              id="subject"
-              name="subject"
-              class="block p-3 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 shadow-sm focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light"
-              placeholder="Let us know how we can help you"
-              required
-            />
-          </div>
-          <div class="sm:col-span-2">
-            <label
-              for="message"
-              class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400"
-            >
-              Your message
-            </label>
-            <textarea
-              id="message"
-              name="message"
-              rows="6"
-              class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg shadow-sm border border-gray-300 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
-              placeholder="Leave a comment..."
-            ></textarea>
-          </div>
-          {/* <button
-            type="submit"
-            class="py-3 px-5 text-sm font-medium text-center text-white rounded-lg bg-primary-700 sm:w-fit hover:bg-primary-800 focus:ring-4 focus:outline-none focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
+          <Heading as="h2" size="2xl" textAlign="center" color={headingColor}>
+            Contact Me
+          </Heading>
+          <Text
+            mt={4}
+            mb={10}
+            textAlign="center"
+            fontSize={{ base: "lg", md: "xl" }}
+            fontWeight="light"
+            color={bodyColor}
           >
-            Send message
-          </button> */}
-          <Button type="submit">Send message</Button>
-        </form>
-      </div>
-    </div>
+            Got a technical issue? Want to talk about a certain anime? Collaborate
+            on your next project? Let me know.
+          </Text>
+          <Box as="form" action="https://formspree.io/f/xnqenrvl" method="POST">
+            <FormControl mb={8} isRequired>
+              <FormLabel color={labelColor}>Your email</FormLabel>
+              <Input
+                id="email"
+                name="email"
+                type="email"
+                placeholder="name@gmail.com"
+                bg={inputBg}
+                color={inputColor}
+                borderColor={borderColor}
+                _placeholder={{ color: placeholderColor }}
+                _focusVisible={{ borderColor: "#64FFDA", boxShadow: "0 0 0 1px #64FFDA" }}
+              />
+            </FormControl>
+            <FormControl mb={8} isRequired>
+              <FormLabel color={labelColor}>Subject</FormLabel>
+              <Input
+                id="subject"
+                name="subject"
+                type="text"
+                placeholder="Let us know how we can help you"
+                bg={inputBg}
+                color={inputColor}
+                borderColor={borderColor}
+                _placeholder={{ color: placeholderColor }}
+                _focusVisible={{ borderColor: "#64FFDA", boxShadow: "0 0 0 1px #64FFDA" }}
+              />
+            </FormControl>
+            <FormControl mb={8} isRequired>
+              <FormLabel color={labelColor}>Your message</FormLabel>
+              <Textarea
+                id="message"
+                name="message"
+                rows={6}
+                placeholder="Leave a comment..."
+                bg={inputBg}
+                color={inputColor}
+                borderColor={borderColor}
+                _placeholder={{ color: placeholderColor }}
+                _focusVisible={{ borderColor: "#64FFDA", boxShadow: "0 0 0 1px #64FFDA" }}
+              />
+            </FormControl>
+            <Button type="submit" colorScheme="teal" size="lg">
+              Send message
+            </Button>
+          </Box>
+        </Box>
+      </Container>
+    </Box>
   );
 }
 

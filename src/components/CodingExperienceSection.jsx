@@ -7,15 +7,23 @@ import {
   HStack,
   VStack,
 } from "@chakra-ui/react";
+import { useColorModeValue } from "@chakra-ui/react";
 
 function CodingCard({ platform, description, children, link }) {
+  const cardBg = useColorModeValue("#FFFFFF", "#232A3A");
+  const titleColor = useColorModeValue("#1A202C", "#ECEEF3");
+  const bodyColor = useColorModeValue("#718096", "#ACB2C9");
+  const iconColor = useColorModeValue("#4A5568", "#ACB2C9");
+
   return (
-    <Card maxW="sm" className="p-5">
+    <Card maxW="sm" className="p-5" bg={cardBg}>
       <VStack>
         <div className="flex w-full items-center px-4 pt-4">
-          <div>{children}</div>
+          <div style={{ color: iconColor }}>{children}</div>
           <CardHeader className="flex-1">
-            <Heading size="md">{platform}</Heading>
+            <Heading size="md" color={titleColor}>
+              {platform}
+            </Heading>
           </CardHeader>
           <div>
             <a href={link} target="_blank">
@@ -29,7 +37,8 @@ function CodingCard({ platform, description, children, link }) {
                 strokeWidth="2"
                 strokeLinecap="round"
                 strokeLinejoin="round"
-                className="feather feather-external-link hover:text-white-color transition-colors text-white-dark-color"
+                className="feather feather-external-link transition-colors"
+                style={{ color: iconColor }}
               >
                 <title>External Link</title>
                 <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
@@ -40,7 +49,9 @@ function CodingCard({ platform, description, children, link }) {
           </div>
         </div>
         <CardBody>
-          <p className="text-white-dark-color text-justify">{description}</p>
+          <p className="text-justify" style={{ color: bodyColor }}>
+            {description}
+          </p>
         </CardBody>
       </VStack>
     </Card>
@@ -48,9 +59,11 @@ function CodingCard({ platform, description, children, link }) {
 }
 
 function CodingExperienceSection() {
+  const headingColor = useColorModeValue("#1A202C", "#ECEEF3");
+
   return (
     <div className="flex flex-col gap-20 p-20 pr-[150px] px-56">
-      <div className="font-sans text-white-color h-[50px] text-6xl font-black flex-2 pl-8">
+      <div className="font-sans h-[50px] text-6xl font-black flex-2 pl-8" style={{ color: headingColor }}>
         Coding Experience
       </div>
       <div className="grid grid-cols-3 gap-7">
@@ -63,7 +76,7 @@ function CodingExperienceSection() {
             height="50px"
             viewBox="0 0 32 32"
             width="50px"
-            fill="#fff"
+             fill="currentColor"
             xmlns="http://www.w3.org/2000/svg"
           >
             <path d="m21.469 23.907-3.595 3.473c-.624.625-1.484.885-2.432.885s-1.807-.26-2.432-.885l-5.776-5.812c-.62-.625-.937-1.537-.937-2.485 0-.952.317-1.812.937-2.432l5.76-5.844c.62-.619 1.5-.859 2.448-.859s1.808.26 2.432.885l3.595 3.473c.687.688 1.823.663 2.536-.052.708-.713.735-1.848.047-2.536l-3.473-3.511c-.901-.891-2.032-1.505-3.261-1.787l3.287-3.333c.688-.687.667-1.823-.047-2.536s-1.849-.735-2.536-.052l-13.469 13.469c-1.307 1.312-1.989 3.113-1.989 5.113 0 1.996.683 3.86 1.989 5.168l5.797 5.812c1.307 1.307 3.115 1.937 5.115 1.937 1.995 0 3.801-.683 5.109-1.989l3.479-3.521c.688-.683.661-1.817-.052-2.531s-1.849-.74-2.531-.052zm6.28-6.558h-13.531c-.932 0-1.692.801-1.692 1.791 0 .991.76 1.797 1.692 1.797h13.531c.933 0 1.693-.807 1.693-1.797 0-.989-.76-1.791-1.693-1.791z" />
@@ -77,7 +90,7 @@ function CodingExperienceSection() {
           <svg
             height="60px"
             width="60px"
-            fill="#fff"
+             fill="currentColor"
             xmlns="http://www.w3.org/2000/svg"
             viewBox="-1 -1 582 486.999"
           >
@@ -94,7 +107,7 @@ function CodingExperienceSection() {
           link="https://www.hackerearth.com/@r.rahul.developer"
         >
           <svg
-            fill="#fff"
+             fill="currentColor"
             width="50px"
             height="50px"
             viewBox="0 0 24 24"
@@ -116,7 +129,7 @@ function CodingExperienceSection() {
           link="https://profile.codingninjas.com/a1ab93b6-89e2-4a25-97bc-b7c1289380ac"
         >
           <svg
-            fill="#fff"
+             fill="currentColor"
             width="50px"
             height="50px"
             viewBox="0 0 24 24"
@@ -152,7 +165,7 @@ function CodingExperienceSection() {
             role="img"
             viewBox="0 0 24 24"
             fill="none"
-            stroke="#fff"
+             stroke="currentColor"
             strokeWidth="2"
             strokeLinecap="round"
             strokeLinejoin="round"

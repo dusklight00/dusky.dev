@@ -2,12 +2,20 @@ import React from "react";
 import NoteProjectCard from "./NoteProjectCard";
 import Link from "./Link";
 import { Button } from "@chakra-ui/react";
+import { useColorModeValue } from "@chakra-ui/react";
 
 function NoteProjectSection() {
+  const headingColor = useColorModeValue("#1A202C", "#ECEEF3");
+  const buttonColor = useColorModeValue("#1A202C", "#ECEEF3");
+  const buttonBorderColor = useColorModeValue("#CBD5E0", "#4A5568");
+
   return (
     <div className="mt-32">
       <div className="flex items-center flex-col gap-5 mb-10">
-        <div className="font-sans text-white-color h-[50px] text-[40px] font-black mx-auto">
+        <div
+          className="font-sans h-[50px] text-[40px] font-black mx-auto"
+          style={{ color: headingColor }}
+        >
           Other Projects
         </div>
         <Link>View the Archive</Link>
@@ -45,7 +53,11 @@ function NoteProjectSection() {
         />
       </div>
       <div className="flex justify-center p-10">
-        <Button variant="ghost" colorScheme="white" size="md">
+        <Button
+          variant="outline"
+          size="md"
+          style={{ color: buttonColor, borderColor: buttonBorderColor }}
+        >
           Link to Github
         </Button>
       </div>

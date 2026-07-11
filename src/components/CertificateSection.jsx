@@ -1,4 +1,5 @@
 import Image from "../assets/at-makeathon/1.jpg";
+import { useColorModeValue } from "@chakra-ui/react";
 
 import ATMakeathonCertificate from "../assets/certificates/at-makeathon.jpg";
 import ChossCertificate from "../assets/certificates/choss.jpg";
@@ -12,18 +13,28 @@ import StartAThonCertificate from "../assets/certificates/start-a-thon.jpg";
 import TIFACCertificate from "../assets/certificates/tifac.jpg";
 
 function CertificateCard({ image, shortTitle, title, description }) {
+  const cardBg = useColorModeValue("#FFFFFF", "#232A3A");
+  const titleColor = useColorModeValue("#1A202C", "#ECEEF3");
+  const mutedColor = useColorModeValue("#718096", "#ACB2C9");
+  const iconColor = useColorModeValue("#4A5568", "#ACB2C9");
+
   return (
-    <div className="border border-[#ffffff15] shadow-xl rounded-3xl bg-background-light-dark-color h-min">
+    <div
+      className="border border-[#ffffff15] shadow-xl rounded-3xl h-min"
+      style={{ backgroundColor: cardBg }}
+    >
       <div className="px-3 pt-3 rounded-sm">
         <img src={image} className="rounded-2xl" />
       </div>
       <div className="flex">
         <div className="flex-1">
-          <div className="px-7 pt-4 text-sm font-mono text-white-dark-color uppercase">
+          <div className="px-7 pt-4 text-sm font-mono uppercase" style={{ color: mutedColor }}>
             {shortTitle}
           </div>
-          <div className="px-7 font-medium text-lg">{title}</div>
-          <div className="px-7 pb-5 text-white-dark-color text-sm">
+          <div className="px-7 font-medium text-lg" style={{ color: titleColor }}>
+            {title}
+          </div>
+          <div className="px-7 pb-5 text-sm" style={{ color: mutedColor }}>
             {description}
           </div>
         </div>
@@ -38,7 +49,8 @@ function CertificateCard({ image, shortTitle, title, description }) {
             strokeWidth="2"
             strokeLinecap="round"
             strokeLinejoin="round"
-            className="feather feather-external-link hover:text-white-color transition-colors text-white-dark-color"
+            className="feather feather-external-link transition-colors"
+            style={{ color: iconColor }}
           >
             <title>External Link</title>
             <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
@@ -68,9 +80,11 @@ const styles = {
 };
 
 function CertificateSection() {
+  const headingColor = useColorModeValue("#1A202C", "#ECEEF3");
+
   return (
     <div className="flex flex-col gap-20 px-48 pb-36">
-      <div className="font-sans text-white-color h-[50px] text-6xl font-black flex-2 pl-16">
+      <div className="font-sans h-[50px] text-6xl font-black flex-2 pl-16" style={{ color: headingColor }}>
         Certificates
       </div>
       <div className="grid grid-cols-3 gap-7">

@@ -17,7 +17,7 @@ function ProjectSection() {
         <div className="font-sans h-[50px] text-[50px] font-black flex-2 pl-3" style={{ color: headingColor }}>
           Projects
         </div>
-        <div className="h-0 flex-1 border opacity-5" style={{ borderColor: dividerColor }}></div>
+        <div className="h-0 flex-1 border opacity-20" style={{ borderColor: dividerColor }}></div>
       </div>
       <ProjectItem
         alignment="right"

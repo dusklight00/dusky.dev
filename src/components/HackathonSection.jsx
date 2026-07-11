@@ -3,6 +3,7 @@ import useEmblaCarousel from "embla-carousel-react";
 import SimpleImageSlider from "react-simple-image-slider";
 import ShowMoreText from "react-show-more-text";
 import EYCertificate from "../assets/certificates/ey-hackathon.png";
+import { useColorModeValue } from "@chakra-ui/react";
 
 const images = [
   {
@@ -34,12 +35,28 @@ const Slider = ({ children, options }) => {
 };
 
 function HoverLink({ children }) {
-  return <span className="font-bold hover:underline">{children}</span>;
+  const linkColor = useColorModeValue("#1A202C", "#ECEEF3");
+
+  return (
+    <span className="font-bold hover:underline" style={{ color: linkColor }}>
+      {children}
+    </span>
+  );
 }
 
 function LinkedInCard({ imgURL, children, likes, comments }) {
+  const cardBg = useColorModeValue("#FFFFFF", "#232A3A");
+  const cardBorder = useColorModeValue("#E2E8F0", "#2D3748");
+  const titleColor = useColorModeValue("#1A202C", "#ECEEF3");
+  const mutedColor = useColorModeValue("#718096", "#ACB2C9");
+  const bubbleBg = useColorModeValue("#FFFFFF", "#181B25");
+  const bubbleBorder = useColorModeValue("#E2E8F0", "#2D3748");
+
   return (
-    <div className="border rounded-lg p-5 flex flex-col w-full gap-3 h-min">
+    <div
+      className="border rounded-lg p-5 flex flex-col w-full gap-3 h-min"
+      style={{ backgroundColor: cardBg, borderColor: cardBorder }}
+    >
       <div className="flex gap-4 items-center">
         <div>
           <img
@@ -49,11 +66,13 @@ function LinkedInCard({ imgURL, children, likes, comments }) {
           />
         </div>
         <div>
-          <div className="font-bold flex gap-2">
+          <div className="font-bold flex gap-2" style={{ color: titleColor }}>
             Rahul Raj
-            <span className="text-white-dark-color font-normal">(He/Him)</span>
+            <span className="font-normal" style={{ color: mutedColor }}>
+              (He/Him)
+            </span>
           </div>
-          <div className="text-white-dark-color">Learner</div>
+          <div style={{ color: mutedColor }}>Learner</div>
         </div>
       </div>
       <div className="flex flex-col gap-4">
@@ -66,21 +85,30 @@ function LinkedInCard({ imgURL, children, likes, comments }) {
       <div>
         <div className="flex items-center gap-1">
           <div className="flex">
-            <div className="border w-5 h-5 flex items-center rounded-full bg-background-color border-background-color">
+            <div
+              className="border w-5 h-5 flex items-center rounded-full"
+              style={{ backgroundColor: bubbleBg, borderColor: bubbleBorder }}
+            >
               <img
                 src="https://static.licdn.com/aero-v1/sc/h/9sun4diznbhgyelaeryxy75ur"
                 alt="like-icon"
                 className="w-full h-full"
               />
             </div>
-            <div className="border w-5 h-5 flex items-center rounded-full bg-background-color border-background-color ml-[-5px]">
+            <div
+              className="border w-5 h-5 flex items-center rounded-full ml-[-5px]"
+              style={{ backgroundColor: bubbleBg, borderColor: bubbleBorder }}
+            >
               <img
                 src="https://static.licdn.com/aero-v1/sc/h/cjrxeu0ese8oxe32kiom8kzoh"
                 alt="clap-icon"
                 className="w-full h-full"
               />
             </div>
-            <div className="border w-5 h-5 flex items-center rounded-full bg-background-color border-background-color ml-[-5px]">
+            <div
+              className="border w-5 h-5 flex items-center rounded-full ml-[-5px]"
+              style={{ backgroundColor: bubbleBg, borderColor: bubbleBorder }}
+            >
               <img
                 src="https://static.licdn.com/aero-v1/sc/h/37hg81qnm85dsy5mbqfifg9qs"
                 alt="love-icon"
@@ -88,8 +116,10 @@ function LinkedInCard({ imgURL, children, likes, comments }) {
               />
             </div>
           </div>
-          <div className="text-xs text-white-dark-color flex-1">{likes}</div>
-          <div className="text-sm text-white-dark-color">
+          <div className="text-xs flex-1" style={{ color: mutedColor }}>
+            {likes}
+          </div>
+          <div className="text-sm" style={{ color: mutedColor }}>
             {comments} Comments
           </div>
         </div>
@@ -100,9 +130,11 @@ function LinkedInCard({ imgURL, children, likes, comments }) {
 }
 
 function HackathonSection() {
+  const headingColor = useColorModeValue("#1A202C", "#ECEEF3");
+
   return (
     <div className="flex flex-col gap-20 p-20 pr-[150px] px-56">
-      <div className="font-sans text-white-color h-[50px] text-6xl font-black flex-2 pl-8">
+      <div className="font-sans h-[50px] text-6xl font-black flex-2 pl-8" style={{ color: headingColor }}>
         Events & Hackathons
       </div>
       <div className="relative flex gap-4">
