@@ -12,9 +12,14 @@ function ProjectSection() {
 
   return (
     <div>
-      <div className="flex items-center gap-10 mt-10 ml-60 w-[700px] my-20">
-        {/* <div className="font-mono text-grey-color text-xl">02.</div> */}
-        <div className="font-sans h-[50px] text-[50px] font-black flex-2 pl-3" style={{ color: headingColor }}>
+      <div className="flex items-center gap-4 mt-10 ml-60 w-[700px] my-20">
+        <div className="font-mono text-grey-color text-xl leading-none self-center">
+          03.
+        </div>
+        <div
+          className="font-sans h-[50px] text-[50px] font-black flex-2 pl-3 leading-[1.1]"
+          style={{ color: headingColor }}
+        >
           Projects
         </div>
         <div className="h-0 flex-1 border opacity-20" style={{ borderColor: dividerColor }}></div>

@@ -12,6 +12,7 @@ import NoteProjectSection from "./components/NoteProjectSection";
 import BlogSection from "./components/BlogSection";
 import Footer from "./components/Footer";
 import ContactMe from "./components/ContactMe";
+import ExperienceSection from "./components/ExperienceSection";
 import HackathonSection from "./components/HackathonSection";
 import CertificateSection from "./components/CertificateSection";
 import CodingExperienceSection from "./components/CodingExperienceSection";
@@ -30,6 +31,7 @@ function App() {
       {/* <Email /> */}
       <Hero />
       <AboutMe />
+      <ExperienceSection />
       {/* <CodingExperienceSection /> */}
       {/* <HackathonSection /> */}
       {/* <CertificateSection /> */}
