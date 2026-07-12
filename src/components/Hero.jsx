@@ -55,28 +55,28 @@ function Hero() {
   return (
     <motion.div
       // variants={parent}
-      className="flex pl-[300px] items-center mt-20"
+      className="flex pl-[300px] max-lg:pl-0 items-center mt-20 max-lg:mt-10 max-sm:mt-5 max-lg:flex-col max-lg:gap-5"
       initial="hidden"
       animate="show"
     >
-      <div className="h-screen">
+      <div className="h-screen w-full max-lg:text-center">
         <motion.h1
           variants={hi}
-          className="font-mono text-3xl"
+          className="font-mono text-3xl max-lg:text-2xl max-sm:text-xl"
           style={{ color: greyColor }}
         >
           Hello, I'm
         </motion.h1>
         <motion.h2
           variants={rahul}
-          className="font-sans text-[120px] font-black p-0 m-0 ml-[-6px]"
+          className="font-sans text-[120px] font-black p-0 m-0 ml-[-6px] max-lg:text-[80px] max-sm:text-[50px]"
           style={{ color: whiteColor }}
         >
           Rahul Raj
         </motion.h2>
         <motion.h3
           variants={developer}
-          className="font-sans text-[120px] font-black opacity-60 p-0 mt-[-50px] ml-[-6px]"
+          className="font-sans text-[120px] font-black opacity-60 p-0 mt-[-50px] ml-[-6px] max-lg:text-[80px] max-sm:text-[50px] max-sm:mt-[-30px]"
           style={{ color: whiteColor }}
         >
           <Typewriter
@@ -108,7 +108,7 @@ function Hero() {
         </motion.h3>
         <motion.p
           variants={para}
-          className="font-sans text-2xl mt-[-20px]"
+          className="font-sans text-2xl mt-[-20px] max-lg:text-xl max-sm:text-sm"
           style={{ color: whiteDarkColor }}
         >
           I'm a fresher specializing in building (and occasionally
