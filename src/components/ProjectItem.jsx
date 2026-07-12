@@ -11,39 +11,41 @@ function ProjectItem({ alignment = "left", title, description, tags, image }) {
   const iconHoverColor = useColorModeValue("#1A202C", "#ECEEF3");
   const overlayBg = useColorModeValue("rgba(255, 255, 255, 0.7)", "rgba(35, 42, 58, 0.6)");
 
+  const isRight = alignment === "right";
+
   return (
-    <div className="flex justify-center mb-20">
+    <div className="flex justify-center mb-16 px-6 sm:px-10 lg:px-0">
+      {/* ── Desktop: overlapping side-by-side layout ─────────────────────── */}
       <div
-        className={
-          alignment == "left"
-            ? "mx-24 flex items-center"
-            : "mx-24 flex items-center flex-row-reverse"
-        }
+        className={`hidden lg:flex items-center w-full max-w-4xl ${
+          isRight ? "flex-row-reverse" : ""
+        }`}
       >
-        <div
-          className={
-            alignment == "left" ? "z-10" : "z-10 flex flex-col items-end"
-          }
-        >
+        {/* Text panel */}
+        <div className={`z-10 ${isRight ? "flex flex-col items-end" : ""}`}>
           <div className="font-mono text-xl z-30" style={{ color: greyColor }}>
             Featured Project
           </div>
-          <div className="font-sans h-[50px] text-4xl font-black flex-2 pt-1" style={{ color: headingColor }}>
+          <div
+            className="font-sans h-[50px] text-4xl font-black flex-2 pt-1"
+            style={{ color: headingColor }}
+          >
             {title}
           </div>
           <div
-            className={
-              alignment == "left"
-                ? "p-5 w-[500px] rounded shadow-md hover:shadow-xl transition-shadow duration-500 text-lg"
-                : "p-5 w-[500px] rounded shadow-md hover:shadow-xl transition-shadow duration-500 text-right text-lg"
-            }
+            className={`p-5 w-[500px] rounded shadow-md hover:shadow-xl transition-shadow duration-500 text-lg ${
+              isRight ? "text-right" : ""
+            }`}
             style={{ backgroundColor: cardBg, color: textColor }}
           >
             {description}
           </div>
-          <div className="flex font-mono gap-5 py-5 px-1 text-base" style={{ color: tagColor }}>
+          <div
+            className="flex font-mono gap-5 py-5 px-1 text-base"
+            style={{ color: tagColor }}
+          >
             {tags.map((tag) => (
-              <span>{tag}</span>
+              <span key={tag}>{tag}</span>
             ))}
           </div>
           <div className="flex px-1 gap-5" style={{ color: iconColor }}>
@@ -59,8 +61,8 @@ function ProjectItem({ alignment = "left", title, description, tags, image }) {
               strokeLinejoin="round"
               className="feather feather-github transition-colors"
               style={{ color: iconColor }}
-              onMouseEnter={(e) => e.currentTarget.style.color = iconHoverColor}
-              onMouseLeave={(e) => e.currentTarget.style.color = iconColor}
+              onMouseEnter={(e) => (e.currentTarget.style.color = iconHoverColor)}
+              onMouseLeave={(e) => (e.currentTarget.style.color = iconColor)}
             >
               <title>GitHub</title>
               <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
@@ -77,8 +79,8 @@ function ProjectItem({ alignment = "left", title, description, tags, image }) {
               strokeLinejoin="round"
               className="feather feather-external-link transition-colors"
               style={{ color: iconColor }}
-              onMouseEnter={(e) => e.currentTarget.style.color = iconHoverColor}
-              onMouseLeave={(e) => e.currentTarget.style.color = iconColor}
+              onMouseEnter={(e) => (e.currentTarget.style.color = iconHoverColor)}
+              onMouseLeave={(e) => (e.currentTarget.style.color = iconColor)}
             >
               <title>External Link</title>
               <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
@@ -87,20 +89,99 @@ function ProjectItem({ alignment = "left", title, description, tags, image }) {
             </svg>
           </div>
         </div>
+
+        {/* Image panel */}
         <div
-          className={
-            alignment == "left"
-              ? "z-0 ml-[-50px] w-[570px] h-[420px] overflow-hidden rounded-lg relative shadow-lg"
-              : "z-0 mr-[-50px] w-[570px] h-[420px] rounded-lg overflow-hidden relative shadow-lg"
-          }
+          className={`z-0 w-[570px] h-[420px] overflow-hidden rounded-lg relative shadow-lg ${
+            isRight ? "mr-[-50px]" : "ml-[-50px]"
+          }`}
         >
-          <div className="bg-background-light-dark-color absolute inset-0 z-20 rounded-lg" style={{ backgroundColor: overlayBg, opacity: 0.6 }}></div>
+          <div
+            className="absolute inset-0 z-20 rounded-lg"
+            style={{ backgroundColor: overlayBg, opacity: 0.6 }}
+          ></div>
           <img
             src={image}
-            alt="live-digit-recognizer"
+            alt={title}
             width="100%"
             className="rounded-md hover:grayscale-0 transition-all grayscale"
           />
+        </div>
+      </div>
+
+      {/* ── Mobile / Tablet: image-as-background card layout ─────────────── */}
+      <div className="lg:hidden w-full max-w-2xl relative rounded-lg overflow-hidden shadow-md min-h-[320px] sm:min-h-[380px]">
+        {/* Faded background image */}
+        <img
+          src={image}
+          alt={title}
+          className="absolute inset-0 w-full h-full object-cover opacity-20"
+        />
+        {/* Dark overlay for readability */}
+        <div
+          className="absolute inset-0"
+          style={{ backgroundColor: cardBg, opacity: 0.75 }}
+        />
+
+        {/* Content — sits above both layers */}
+        <div className="relative z-10 p-6 sm:p-8 flex flex-col gap-3 h-full">
+          <div className="font-mono text-sm" style={{ color: greyColor }}>
+            Featured Project
+          </div>
+          <div
+            className="font-sans text-2xl sm:text-3xl font-black"
+            style={{ color: headingColor }}
+          >
+            {title}
+          </div>
+          <p className="text-base sm:text-lg leading-relaxed" style={{ color: textColor }}>
+            {description}
+          </p>
+          <div className="flex flex-wrap font-mono gap-3 text-sm mt-1" style={{ color: tagColor }}>
+            {tags.map((tag) => (
+              <span key={tag}>{tag}</span>
+            ))}
+          </div>
+          <div className="flex gap-5 mt-1" style={{ color: iconColor }}>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              role="img"
+              viewBox="0 0 24 24"
+              fill="none"
+              height="22px"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              className="feather feather-github transition-colors"
+              style={{ color: iconColor }}
+              onMouseEnter={(e) => (e.currentTarget.style.color = iconHoverColor)}
+              onMouseLeave={(e) => (e.currentTarget.style.color = iconColor)}
+            >
+              <title>GitHub</title>
+              <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+            </svg>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              role="img"
+              viewBox="0 0 24 24"
+              height="22px"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              className="feather feather-external-link transition-colors"
+              style={{ color: iconColor }}
+              onMouseEnter={(e) => (e.currentTarget.style.color = iconHoverColor)}
+              onMouseLeave={(e) => (e.currentTarget.style.color = iconColor)}
+            >
+              <title>External Link</title>
+              <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+              <polyline points="15 3 21 3 21 9"></polyline>
+              <line x1="10" y1="14" x2="21" y2="3"></line>
+            </svg>
+          </div>
         </div>
       </div>
     </div>

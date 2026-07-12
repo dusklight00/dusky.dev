@@ -10,7 +10,7 @@ function NoteProjectCard({ title, description, tags }) {
 
   return (
     <motion.div
-      className="rounded w-80 px-6 py-7 shadow-md hover:shadow-xl z-50 transition-shadow"
+      className="rounded w-full h-full px-6 py-7 shadow-md hover:shadow-xl z-50 transition-shadow flex flex-col"
       style={{ backgroundColor: cardBg }}
       whileHover={{ y: "-5px" }}
     >
@@ -51,12 +51,12 @@ function NoteProjectCard({ title, description, tags }) {
       <div className="font-sans font-bold text-xl pt-10 pb-1 transition-colors" style={{ color: titleColor }}>
         {title}
       </div>
-      <div className="font-sans text-md" style={{ color: bodyColor }}>
+      <div className="font-sans text-md flex-grow" style={{ color: bodyColor }}>
         {description}
       </div>
-      <div className="font-mono flex gap-2 text-xs pt-5" style={{ color: bodyColor }}>
+      <div className="font-mono flex flex-wrap gap-2 text-xs pt-5 mt-auto" style={{ color: bodyColor }}>
         {tags.map((tag) => (
-          <div>{tag}</div>
+          <div key={tag}>{tag}</div>
         ))}
       </div>
     </motion.div>

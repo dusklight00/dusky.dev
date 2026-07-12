@@ -11,6 +11,7 @@ function AboutMe() {
 
   return (
     <motion.div
+      id="about-me-section"
       className="flex min-h-screen flex-col items-center gap-10 px-6 py-20 sm:px-10 lg:flex-row lg:gap-24 lg:px-24 xl:px-64"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}

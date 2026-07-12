@@ -20,7 +20,7 @@ function NoteProjectSection() {
         </div>
         <Link>View the Archive</Link>
       </div>
-      <div className="grid grid-cols-3 gap-7 w-4/6 mx-auto">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-7 px-6 sm:px-10 lg:px-24 xl:px-64">
         <NoteProjectCard
           title="Webscapy"
           description="Webscapy is a Python package that extends the capabilities of the Selenium framework, originally designed for web testing, to perform web scraping tasks"

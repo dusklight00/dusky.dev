@@ -16,6 +16,7 @@ import ExperienceSection from "./components/ExperienceSection";
 import HackathonSection from "./components/HackathonSection";
 import CertificateSection from "./components/CertificateSection";
 import CodingExperienceSection from "./components/CodingExperienceSection";
+import FlyingEquations from "./components/FlyingEquations";
 
 import { LinkedInEmbed } from "react-social-media-embed";
 
@@ -25,6 +26,7 @@ function App() {
       <AnimatedCursor />
       <GlobalStyle />
       <BgGridLines height="500px" />
+      <FlyingEquations />
       <Loader />
       <Navbar />
       <Socials />

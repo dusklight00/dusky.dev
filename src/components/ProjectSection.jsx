@@ -12,7 +12,7 @@ function ProjectSection() {
 
   return (
     <div>
-      <div className="flex items-center gap-4 mt-10 ml-60 w-[700px] my-20">
+      <div className="flex items-center gap-4 my-20 px-6 sm:px-10 lg:px-24 xl:px-64">
         <div className="font-mono text-grey-color text-xl leading-none self-center">
           03.
         </div>
