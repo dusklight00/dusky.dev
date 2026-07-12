@@ -96,10 +96,35 @@ function ExperienceSection() {
 
       <Box className="grid gap-8 md:grid-cols-[180px_1fr]" alignItems="start">
         <Box position="relative" role="tablist" aria-label="Experience tabs" pt={1}>
-          <Box position="absolute" left="15px" top="0" bottom="0" w="2px" bg="rgba(113, 128, 150, 0.18)" />
-          <Box position="absolute" left="15px" top={`${activeIndex * tabHeight}px`} w="2px" h={`${tabHeight}px`} bg={accentColor} />
+          <Box
+            position="absolute"
+            left="15px"
+            top="0"
+            bottom="0"
+            w="2px"
+            bg="rgba(113, 128, 150, 0.18)"
+            display={{ base: "none", md: "block" }}
+          />
+          <Box
+            position="absolute"
+            left="15px"
+            top={`${activeIndex * tabHeight}px`}
+            w="2px"
+            h={`${tabHeight}px`}
+            bg={accentColor}
+            display={{ base: "none", md: "block" }}
+          />
 
-          <VStack align="stretch" spacing={0} pl={7}>
+          <Box
+            display={{ base: "flex", md: "block" }}
+            alignItems={{ base: "stretch", md: "initial" }}
+            gap={{ base: 2, md: 0 }}
+            overflowX={{ base: "auto", md: "visible" }}
+            pb={{ base: 2, md: 0 }}
+            pl={{ base: 0, md: 7 }}
+            flexDirection={{ base: "row", md: "column" }}
+            sx={{ scrollbarWidth: "none", "&::-webkit-scrollbar": { display: "none" } }}
+          >
             {jobs.map((job, index) => {
               const isActive = index === activeIndex;
 
@@ -112,10 +137,13 @@ function ExperienceSection() {
                   aria-selected={isActive}
                   aria-controls={`panel-${index}`}
                   tabIndex={0}
-                  minH={`${tabHeight}px`}
+                  minH={{ base: "44px", md: `${tabHeight}px` }}
                   display="flex"
                   alignItems="center"
-                  px={4}
+                  justifyContent="center"
+                  px={{ base: 3, md: 4 }}
+                  whiteSpace="nowrap"
+                  borderBottom={{ base: isActive ? `2px solid ${accentColor}` : "2px solid transparent", md: "none" }}
                   fontFamily="mono"
                   fontSize="sm"
                   color={isActive ? accentColor : mutedColor}
@@ -133,7 +161,7 @@ function ExperienceSection() {
                 </Box>
               );
             })}
-          </VStack>
+          </Box>
         </Box>
 
         <Box id={`panel-${activeIndex}`} role="tabpanel" aria-labelledby={`tab-${activeIndex}`} pt={1}>
