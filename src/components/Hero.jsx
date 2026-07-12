@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import Typewriter from "typewriter-effect";
 import { useColorModeValue } from "@chakra-ui/react";
 
+
 function Hero() {
   const greyColor = useColorModeValue("#718096", "#6e7ba0");
   const whiteColor = useColorModeValue("#1A202C", "#ECEEF3");
@@ -13,9 +14,7 @@ function Hero() {
     show: {
       opacity: 1,
       y: 0,
-      transition: {
-        delay: 3,
-      },
+      transition: { delay: 3 },
     },
   };
 
@@ -24,9 +23,7 @@ function Hero() {
     show: {
       opacity: 1,
       y: 0,
-      transition: {
-        delay: 3.25,
-      },
+      transition: { delay: 3.25 },
     },
   };
 
@@ -35,9 +32,7 @@ function Hero() {
     show: {
       opacity: 0.6,
       y: 0,
-      transition: {
-        delay: 3.5,
-      },
+      transition: { delay: 3.5 },
     },
   };
 
@@ -46,9 +41,7 @@ function Hero() {
     show: {
       opacity: 1,
       y: 0,
-      transition: {
-        delay: 3.75,
-      },
+      transition: { delay: 3.75 },
     },
   };
 
@@ -117,6 +110,8 @@ function Hero() {
           <br />
           learning, growing my skills, and build new ideas!
         </motion.p>
+
+
       </div>
     </motion.div>
   );

@@ -29,8 +29,16 @@ const EQUATIONS = [
 ];
 
 const REPULSION_RADIUS   = 160;
-const REPULSION_STRENGTH = 3.5;
-const DAMPING            = 0.92;
+ const REPULSION_STRENGTH = 3.5;
+ const DAMPING_DRIFT      = 0.92;   // impulse decay while hovering
+const DAMPING_ORBIT      = 0.97;   // softer decay while clicking → allows orbiting
+
+// Gravity constant for click-attraction (force = GRAVITY / dist)
+const GRAVITY            = 280;    // tweak higher = stronger pull across screen
+const MIN_ATTRACT_DIST   = 25;     // prevent singularity when very close
+
+// Glow radius — larger than repulsion so equations light up before being pushed
+const GLOW_RADIUS        = 280;
 
 // Lifespan range in frames (~60fps)
 const LIFE_MIN    = 180;   // ~3 s
@@ -72,11 +80,12 @@ function createParticle(width, height, color, offsetLife = 0) {
 }
 
 export default function FlyingEquations() {
-  const canvasRef    = useRef(null);
-  const particlesRef = useRef([]);
-  const rafRef       = useRef(null);
-  const mouseRef     = useRef({ x: -9999, y: -9999 });
-  const colorMode    = useColorModeValue("light", "dark");
+  const canvasRef     = useRef(null);
+  const particlesRef  = useRef([]);
+  const rafRef        = useRef(null);
+  const mouseRef      = useRef({ x: -9999, y: -9999 });
+  const isClickingRef = useRef(false);   // true while mouse button held
+  const colorMode     = useColorModeValue("light", "dark");
   const equationColor = colorMode === "dark" ? "#ACB2C9" : "#4A5568";
 
   useEffect(() => {
@@ -93,8 +102,12 @@ export default function FlyingEquations() {
 
     const onMouseMove  = (e) => { mouseRef.current = { x: e.clientX, y: e.clientY }; };
     const onMouseLeave = ()  => { mouseRef.current = { x: -9999, y: -9999 }; };
+    const onMouseDown  = ()  => { isClickingRef.current = true; };
+    const onMouseUp    = ()  => { isClickingRef.current = false; };
     window.addEventListener("mousemove",  onMouseMove);
     window.addEventListener("mouseleave", onMouseLeave);
+    window.addEventListener("mousedown",  onMouseDown);
+    window.addEventListener("mouseup",    onMouseUp);
 
     // Stagger initial lifetimes so they don't all fade at once
     const COUNT = 32;
@@ -110,6 +123,7 @@ export default function FlyingEquations() {
     const tick = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
       const { x: mx, y: my } = mouseRef.current;
+      const isClicking = isClickingRef.current;
 
       particlesRef.current.forEach((p, i) => {
         // ── Lifecycle ────────────────────────────────────────────────────
@@ -131,19 +145,32 @@ export default function FlyingEquations() {
           lifeFactor = 1;                                                  // fully visible
         }
 
-        // ── Cursor repulsion ─────────────────────────────────────────────
+        // ── Cursor repulsion (hover) / gravity attraction (click) ───────
         const dx   = p.x - mx;
         const dy   = p.y - my;
         const dist = Math.sqrt(dx * dx + dy * dy);
 
-        if (dist < REPULSION_RADIUS && dist > 0) {
-          const force = (1 - dist / REPULSION_RADIUS) * REPULSION_STRENGTH;
-          p.ex += (dx / dist) * force;
-          p.ey += (dy / dist) * force;
+        if (isClicking) {
+          // Inverse-distance gravity: F = GRAVITY / dist, infinite range
+          // Soft min distance to avoid singularity / particle sticking
+          const safeDist = Math.max(dist, MIN_ATTRACT_DIST);
+          const force    = GRAVITY / safeDist;
+          // Pull toward cursor (negate direction vector)
+          p.ex -= (dx / safeDist) * force;
+          p.ey -= (dy / safeDist) * force;
+          // Soft damping → preserves tangential velocity → enables orbiting
+          p.ex *= DAMPING_ORBIT;
+          p.ey *= DAMPING_ORBIT;
+        } else {
+          // Hover: radial repulsion within fixed radius
+          if (dist < REPULSION_RADIUS && dist > 0) {
+            const force = (1 - dist / REPULSION_RADIUS) * REPULSION_STRENGTH;
+            p.ex += (dx / dist) * force;
+            p.ey += (dy / dist) * force;
+          }
+          p.ex *= DAMPING_DRIFT;
+          p.ey *= DAMPING_DRIFT;
         }
-
-        p.ex *= DAMPING;
-        p.ey *= DAMPING;
 
         p.vx = p.bvx + p.ex;
         p.vy = p.bvy + p.ey;
@@ -153,8 +180,14 @@ export default function FlyingEquations() {
         p.rotation += p.rotationSpeed + (Math.abs(p.ex) + Math.abs(p.ey)) * 0.4;
 
         // ── Draw ─────────────────────────────────────────────────────────
-        const proximity  = dist < REPULSION_RADIUS ? 1 - dist / REPULSION_RADIUS : 0;
-        const drawAlpha  = Math.min(1, p.peakOpacity * lifeFactor + proximity * 0.2);
+        // Quadratic proximity glow: much stronger up close, fades over GLOW_RADIUS
+        const glowFactor   = (!isClicking && dist < GLOW_RADIUS && dist > 0)
+          ? Math.pow(1 - dist / GLOW_RADIUS, 2)   // 0 at edge → 1 at cursor
+          : 0;
+        const attractBoost = isClicking ? 0.12 : 0;
+
+        // Opacity: base × lifecycle + proximity boost (up to +0.55 at cursor)
+        const drawAlpha = Math.min(1, p.peakOpacity * lifeFactor + glowFactor * 0.55 + attractBoost);
 
         ctx.save();
         ctx.translate(p.x, p.y);
@@ -162,6 +195,15 @@ export default function FlyingEquations() {
         ctx.globalAlpha = drawAlpha;
         ctx.fillStyle   = p.color;
         ctx.font        = `${p.size}px 'Courier New', monospace`;
+
+        // Canvas shadow glow — scales with proximity (max blur 18px)
+        if (glowFactor > 0) {
+          ctx.shadowColor = p.color;
+          ctx.shadowBlur  = glowFactor * 18;
+        } else {
+          ctx.shadowBlur  = 0;
+        }
+
         ctx.fillText(p.text, 0, 0);
         ctx.restore();
       });
@@ -176,6 +218,8 @@ export default function FlyingEquations() {
       window.removeEventListener("resize",     resize);
       window.removeEventListener("mousemove",  onMouseMove);
       window.removeEventListener("mouseleave", onMouseLeave);
+      window.removeEventListener("mousedown",  onMouseDown);
+      window.removeEventListener("mouseup",    onMouseUp);
     };
   }, [equationColor]);
 
