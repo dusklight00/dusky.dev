@@ -1,48 +1,30 @@
-import React, { useState, useEffect, useRef } from "react";
+import React from "react";
 import { motion } from "framer-motion";
 import { useColorModeValue } from "@chakra-ui/react";
 
 function Link({ children }) {
-  const [width, setWidth] = useState(0);
-  const [opacity, setOpacity] = useState(1);
-  const ref = useRef(null);
-
   const textColor = useColorModeValue("#1A202C", "#ECEEF3");
   const lineColor = useColorModeValue("#1A202C", "#ECEEF3");
 
   const lineEffect = {
     hover: {
       width: "100%",
+      opacity: 1,
     },
   };
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      if (ref.current) {
-        setWidth(ref.current.offsetWidth);
-        if (width <= 5) {
-          setOpacity(0);
-        } else if (opacity === 0) {
-          setOpacity(1);
-        }
-      }
-    });
-    return () => clearInterval(interval);
-  }, [width]);
-
   return (
     <motion.span
-      className="font-sans text-2xl relative group whitespace-nowrap"
+      className="relative inline-block whitespace-nowrap font-sans text-[inherit] leading-[inherit]"
       style={{ color: textColor }}
       whileHover="hover"
     >
       {children}
       <motion.span
-        className="border inline-block w-0 absolute bottom-0 left-0"
-        style={{ opacity: opacity, borderColor: lineColor }}
-        ref={ref}
+        className="absolute bottom-[0.1em] left-0 h-px w-0 opacity-70"
+        style={{ backgroundColor: lineColor }}
         variants={lineEffect}
-      ></motion.span>
+      />
     </motion.span>
   );
 }

@@ -11,28 +11,31 @@ function AboutMe() {
 
   return (
     <motion.div
-      className="flex items-center gap-24 mx-64 h-screen"
+      className="flex min-h-screen flex-col items-center gap-10 px-6 py-20 sm:px-10 lg:flex-row lg:gap-24 lg:px-24 xl:px-64"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 1, ease: "easeInOut", delay: 4 }}
     >
-      <div className="flex-1 flex flex-col">
-        <div className="flex items-center gap-10 mt-10">
+      <div className="flex w-full max-w-4xl flex-1 flex-col lg:max-w-none">
+        <div className="mt-0 flex flex-col gap-3 sm:flex-row sm:items-center sm:gap-6 lg:mt-10">
           <div className="font-mono text-grey-color text-xl">01.</div>
           <div
-            className="font-sans h-[50px] text-6xl font-black flex-2"
+            className="font-sans text-4xl font-black sm:text-5xl lg:text-6xl"
             style={{ color: headingColor }}
           >
             About Me
           </div>
           <div
-            className="h-0 flex-1 border opacity-5"
+            className="hidden h-0 flex-1 border opacity-5 sm:block"
             style={{ borderColor: dividerColor }}
           ></div>
         </div>
-        <div className="flex gap-10 w-full">
-          <div className="font-sans text-2xl" style={{ color: textColor }}>
-            <p className="mt-10">
+        <div className="flex w-full gap-10">
+          <div
+            className="font-sans text-lg leading-relaxed sm:text-xl lg:text-2xl"
+            style={{ color: textColor }}
+          >
+            <p className="mt-6 sm:mt-10">
               Hello! My name is Rahul and I enjoy creating things that live on
               the internet. My interest in web development started back in 2012
               when I decided to try editing custom <Link>Tumblr</Link> themes —
@@ -47,7 +50,7 @@ function AboutMe() {
               is building accessible, inclusive products and digital experiences
               at Upstatement for a variety of clients.
             </p> */}
-            <p className="mt-10 text-2xl">
+            <p className="mt-6 sm:mt-10">
               I also recently launched a course that covers everything you need
               to build a web app with the Spotify API using Node & React
             </p>
@@ -57,7 +60,7 @@ function AboutMe() {
           </div>
         </div>
       </div>
-      <div>
+      <div className="mx-auto w-full max-w-[240px] sm:max-w-[280px] lg:mx-0 lg:max-w-[320px] xl:max-w-[360px] lg:shrink-0">
         <Avatar />
       </div>
     </motion.div>
