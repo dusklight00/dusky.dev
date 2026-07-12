@@ -23,7 +23,7 @@ function ContactMe() {
   const placeholderColor = useColorModeValue("#718096", "#ACB2C9");
 
   return (
-    <Box as="section" py={16} px={4}>
+    <Box as="section" id="contact-section" py={16} px={4}>
       <Container maxW="container.md">
         <Box
           borderWidth="1px"

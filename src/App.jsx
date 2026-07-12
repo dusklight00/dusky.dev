@@ -18,6 +18,7 @@ import CertificateSection from "./components/CertificateSection";
 import CodingExperienceSection from "./components/CodingExperienceSection";
 import FlyingEquations from "./components/FlyingEquations";
 import ScrollIndicator from "./components/ScrollIndicator";
+import FloatingDock from "./components/FloatingDock";
 
 import { LinkedInEmbed } from "react-social-media-embed";
 
@@ -29,6 +30,7 @@ function App() {
       <BgGridLines height="500px" />
       <FlyingEquations />
       <ScrollIndicator targetId="about-me-section" delay={4.25} />
+      <FloatingDock />
       <Loader />
       <Navbar />
       <Socials />

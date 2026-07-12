@@ -11,7 +11,7 @@ function ProjectSection() {
   const dividerColor = useColorModeValue("#E2E8F0", "#ECEEF3");
 
   return (
-    <div>
+    <div id="projects-section">
       <div className="flex items-center gap-4 my-20 px-6 sm:px-10 lg:px-24 xl:px-64">
         <div className="font-mono text-grey-color text-xl leading-none self-center">
           03.

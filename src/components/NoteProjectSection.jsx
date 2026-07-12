@@ -10,7 +10,7 @@ function NoteProjectSection() {
   const buttonBorderColor = useColorModeValue("#CBD5E0", "#4A5568");
 
   return (
-    <div className="mt-32">
+    <div id="other-projects-section" className="mt-32">
       <div className="flex items-center flex-col gap-5 mb-10">
         <div
           className="font-sans h-[50px] text-[40px] font-black mx-auto"

@@ -12,7 +12,7 @@ function Socials() {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 1, ease: "easeInOut", delay: 4 }}
-      className="fixed flex flex-col gap-11 items-center bottom-0 left-10"
+      className="hidden lg:flex fixed flex-col gap-11 items-center bottom-0 left-10"
     >
       <a href="https://github.com/dusklight00" target="_blank">
         <motion.div

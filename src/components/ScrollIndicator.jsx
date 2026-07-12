@@ -29,7 +29,7 @@ function ScrollIndicator({ targetId = "about-me-section", delay = 4.25 }) {
           // Let framer-motion own the x transform to avoid conflicts with exit animation
           style={{
             position: "fixed",
-            bottom: "2.5rem",
+            bottom: "7rem",
             left: "50%",
             background: "none",
             border: "none",

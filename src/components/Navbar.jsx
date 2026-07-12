@@ -5,15 +5,13 @@ import { DownloadIcon, SunIcon, MoonIcon } from "@chakra-ui/icons";
 
 function Navbar() {
   const { colorMode, toggleColorMode } = useColorMode();
-  const buttonBg = useColorModeValue("gray.100", "navy.800");
   const buttonHoverBg = useColorModeValue("gray.200", "navy.700");
-  const iconColor = useColorModeValue("gray.800", "#ECEEF3");
 
   const onButtonClick = () => {
     const pdfUrl = "Rahul___Resume.pdf";
     const link = document.createElement("a");
     link.href = pdfUrl;
-    link.download = "document.pdf"; // specify the filename
+    link.download = "document.pdf";
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
