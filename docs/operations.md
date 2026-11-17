@@ -1,0 +1,63 @@
+# Operations
+
+## Requirements
+
+- Node.js (the machine this was built on runs v26; Next 16 needs a current LTS or newer)
+- pnpm 10 (`packageManager: pnpm@10.26.0` in `package.json`)
+
+## Run, check, build
+
+| Command | What it does |
+| --- | --- |
+| `pnpm install` | Install dependencies |
+| `pnpm dev` | Dev server on http://localhost:3000 |
+| `pnpm build` | Production build (all routes prerendered) |
+| `pnpm start` | Serve the build (default :3000; `pnpm start -p 3100` for the test port) |
+| `pnpm typecheck` | `tsc --noEmit` (includes `e2e/`) |
+| `pnpm lint` | ESLint (`eslint-config-next` core-web-vitals + typescript) |
+| `pnpm test:e2e` | Playwright, desktop (1440x900) + mobile (Pixel 7) projects |
+
+### End-to-end tests
+
+- `playwright.config.ts` serves on port `PORT` (default **3100**). If a server already listens there it is
+  reused (outside CI); otherwise the config runs `pnpm build && pnpm start -p 3100` itself.
+- Browser: `/usr/bin/chromium` when it exists (override with `PW_CHROMIUM_PATH`); otherwise run
+  `pnpm exec playwright install chromium` once.
+- `CHECK_EXTERNAL_LINKS=1` enables the test that requests every external URL on the page (off by default).
+- Specs: `navigation`, `theme`, `interactions`, `keyboard`, `seo`, `layout-audit` (overflow, console errors,
+  tap targets at 6 viewport sizes, light + dark).
+
+## Environment variables
+
+None are required for local development. No `.env` file is used (`.env*` is git-ignored).
+
+| Name | Used in | Purpose |
+| --- | --- | --- |
+| `NEXT_PUBLIC_SITE_URL` | `src/lib/site.ts` | Absolute site URL for metadata, robots and sitemap. **Set for production.** |
+| `VERCEL_PROJECT_PRODUCTION_URL` | `src/lib/site.ts` | Set by Vercel; fallback when the above is unset |
+| `PORT` | `playwright.config.ts` | Test server port (default 3100) |
+| `PW_CHROMIUM_PATH` | `playwright.config.ts` | Chromium binary for tests |
+| `CHECK_EXTERNAL_LINKS` | `e2e/seo.spec.ts` | Opt-in external link check |
+| `CI` | `playwright.config.ts` | Retries, `forbidOnly`, no server reuse |
+
+## Deploy
+
+Not configured in the repo yet (no `vercel.json` / `vercel.ts`, no CI workflows). The app is a standard
+Next.js project, so any Next-capable host works; on Vercel it needs no extra config beyond setting
+`NEXT_PUBLIC_SITE_URL` (or relying on the production domain).
+
+## Updating content
+
+- Text, roles, projects, awards: `src/data/portfolio.ts`.
+- Profile photo: `public/images/` (use a new file name, see the image-cache gotcha in `CLAUDE.md`), then
+  update `profile.avatar`.
+- Resume: replace `public/Rahul-Raj-Resume.pdf` (path in `profile.resume`).
+
+## Troubleshooting
+
+| Symptom | Cause / fix |
+| --- | --- |
+| Old photo still shows after replacing the file | Image optimiser cache keyed by URL: rename the file or delete `.next/cache/images` |
+| "Activity unavailable" card | GitHub contributions API failed at build/revalidation; rebuild later |
+| Canonical/OG URLs point at localhost | `NEXT_PUBLIC_SITE_URL` not set at build time |
+| `pnpm test:e2e` starts a fresh build | Nothing was listening on :3100; start `pnpm start -p 3100` first to reuse it |
