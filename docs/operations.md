@@ -24,8 +24,9 @@
 - Browser: `/usr/bin/chromium` when it exists (override with `PW_CHROMIUM_PATH`); otherwise run
   `pnpm exec playwright install chromium` once.
 - `CHECK_EXTERNAL_LINKS=1` enables the test that requests every external URL on the page (off by default).
-- Specs: `navigation`, `theme`, `interactions`, `keyboard`, `seo`, `layout-audit` (overflow, console errors,
-  tap targets at 6 viewport sizes, light + dark).
+- Specs: `navigation`, `theme`, `interactions`, `keyboard`, `seo`, `intro`, `layout-audit` (overflow, console
+  errors, tap targets at 6 viewport sizes, light + dark).
+- The config pre-sets the `intro_seen` cookie so tests skip the loading screen; `intro.spec.ts` clears it.
 
 ## Environment variables
 
@@ -42,9 +43,12 @@ None are required for local development. No `.env` file is used (`.env*` is git-
 
 ## Deploy
 
-Not configured in the repo yet (no `vercel.json` / `vercel.ts`, no CI workflows). The app is a standard
-Next.js project, so any Next-capable host works; on Vercel it needs no extra config beyond setting
-`NEXT_PUBLIC_SITE_URL` (or relying on the production domain).
+Vercel (project `dusklight00`) via its Git integration: every push to `main` deploys to production,
+other branches get preview deployments. No CI workflows.
+
+`vercel.json` pins the Next.js preset, pnpm and the `.next` output, overriding any stale dashboard
+settings left from the previous Vite site. Set `NEXT_PUBLIC_SITE_URL` in the Vercel project's environment
+variables (otherwise the production domain from `VERCEL_PROJECT_PRODUCTION_URL` is used).
 
 ## Updating content
 
@@ -60,4 +64,5 @@ Next.js project, so any Next-capable host works; on Vercel it needs no extra con
 | Old photo still shows after replacing the file | Image optimiser cache keyed by URL: rename the file or delete `.next/cache/images` |
 | "Activity unavailable" card | GitHub contributions API failed at build/revalidation; rebuild later |
 | Canonical/OG URLs point at localhost | `NEXT_PUBLIC_SITE_URL` not set at build time |
+| Loading screen never shows while testing manually | It plays once per browser session: clear the `intro_seen` cookie or use a private window |
 | `pnpm test:e2e` starts a fresh build | Nothing was listening on :3100; start `pnpm start -p 3100` first to reuse it |
