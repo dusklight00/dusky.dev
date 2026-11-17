@@ -13,13 +13,25 @@ const USER = profile.handle;
 const PROFILE_URL = socials.find((s) => s.label === "GitHub")?.href ?? `https://github.com/${USER}`;
 
 /**
- * Public contribution calendar for the last year, cached for a day.
- * Throws on failure so a bad response is never cached; the caller renders a fallback.
+ * Public contribution calendar for the last year. Never throws: an error escaping a
+ * "use cache" function fails the whole prerender (and the deploy), even when the caller
+ * catches it. Successes are cached for days; failures return null with a short lifetime
+ * so the next revalidation retries soon instead of keeping the fallback for a day.
  */
-async function getContributions(user: string): Promise<Contributions> {
+async function getContributions(user: string): Promise<Contributions | null> {
   "use cache";
-  cacheLife("days");
+  try {
+    const data = await fetchContributions(user);
+    cacheLife("days");
+    return data;
+  } catch {
+    cacheLife("minutes");
+    return null;
+  }
+}
 
+/** Fetch + validate; throws on any network, HTTP or payload problem. */
+async function fetchContributions(user: string): Promise<Contributions> {
   const res = await fetch(`https://github-contributions-api.jogruber.de/v4/${encodeURIComponent(user)}?y=last`, {
     signal: AbortSignal.timeout(8000),
   });
@@ -175,12 +187,8 @@ function Frame({ children, footer }: { children: React.ReactNode; footer: React.
 /* ---------- section ---------- */
 
 export async function GithubActivity() {
-  let data: Contributions;
-  try {
-    data = await getContributions(USER);
-  } catch {
-    return <GithubActivityUnavailable />;
-  }
+  const data = await getContributions(USER);
+  if (!data) return <GithubActivityUnavailable />;
 
   const weeks = toWeeks(data.days);
   const labels = monthLabels(weeks);

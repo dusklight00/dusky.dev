@@ -62,7 +62,7 @@ variables (otherwise the production domain from `VERCEL_PROJECT_PRODUCTION_URL` 
 | Symptom | Cause / fix |
 | --- | --- |
 | Old photo still shows after replacing the file | Image optimiser cache keyed by URL: rename the file or delete `.next/cache/images` |
-| "Activity unavailable" card | GitHub contributions API failed at build/revalidation; rebuild later |
+| "Activity unavailable" card | GitHub contributions API failed at build/revalidation; it is retried within minutes |
 | Canonical/OG URLs point at localhost | `NEXT_PUBLIC_SITE_URL` not set at build time |
 | Loading screen never shows while testing manually | It plays once per browser session: clear the `intro_seen` cookie or use a private window |
 | Vercel deploy fails in seconds with "invalid or discontinued Node.js Version" | The project setting is still 18.x from the old site; `engines.node` in `package.json` overrides it, so keep that field |

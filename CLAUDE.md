@@ -57,6 +57,8 @@ pins the Next.js preset. `main-old` holds the previous Vite site.
   sections (e.g. `GithubActivity`) outside Suspense so they are in the static HTML.
 - `motion` server-renders `initial` states as inline `opacity:0`; the `<noscript>` style in
   `src/app/layout.tsx` keeps the page readable without JS. Keep it when adding motion.
+- Never let an error escape a `"use cache"` function: it fails the prerender (and the Vercel deploy) even if
+  the caller catches it. Catch inside, return a fallback, and use a short `cacheLife` on the failure branch.
 - With Cache Components, `new Date()` during prerender must be inside a `"use cache"` function (see footer year).
 - The image optimiser cache is keyed by URL: when replacing a file in `public/images/`, give it a new name
   (or delete `.next/cache/images`), or the old image keeps being served.

@@ -27,9 +27,9 @@ motif, tagline, CTAs, socials, live IST clock). Right, in order: `About` · `Exp
 
 - `src/data/portfolio.ts` holds every fact shown on the page (typed `Experience`, `Project`, etc.).
 - `GithubActivity` fetches `https://github-contributions-api.jogruber.de/v4/<handle>?y=last` inside a
-  `"use cache"` function with `cacheLife("days")` and an 8 s timeout. The payload is validated, deduped and
-  gap-filled; on any failure the function throws (so nothing bad is cached) and the section renders an
-  "unavailable" card with a link to the GitHub profile.
+  `"use cache"` function with an 8 s timeout. The payload is validated, deduped and gap-filled. Success is
+  cached with `cacheLife("days")`; on any failure the function returns `null` with `cacheLife("minutes")`
+  (so it is retried soon) and the section renders an "unavailable" card linking to the GitHub profile.
 - `opengraph-image.tsx` fetches font subsets from Google Fonts at build (`cacheLife("max")`), falling back
   to the default font if the fetch fails.
 - `siteUrl` (`src/lib/site.ts`) feeds `metadataBase`, canonical, Open Graph URL, robots and sitemap. It is
@@ -60,9 +60,6 @@ use `/code-review` for that.
 
 - `src/lib/site.ts`: without `NEXT_PUBLIC_SITE_URL` (or Vercel's `VERCEL_PROJECT_PRODUCTION_URL`) the
   build silently uses `http://localhost:3000` for canonical/OG/sitemap URLs.
-- `src/components/sections/github-activity.tsx`: if the API is down during `next build`, the
-  "unavailable" card is baked into the static page; whether it revalidates before the next deploy is
-  unconfirmed.
 - `src/app/opengraph-image.tsx`: a font-fetch failure at build is cached with `cacheLife("max")`, so the
   OG image keeps the fallback font until the next deploy.
 - `src/app/layout.tsx` `themeColor` follows the OS scheme, not the theme chosen with the toggle.
