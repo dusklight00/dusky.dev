@@ -1,45 +1,35 @@
 {
   "name": "dusky.dev",
+  "version": "0.1.0",
   "private": true,
-  "version": "0.0.0",
-  "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
-    "preview": "vite preview"
-  },
-  "engines": {
-    "node": ">=24.x"
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint",
+    "typecheck": "tsc --noEmit",
+    "test:e2e": "playwright test"
   },
   "dependencies": {
-    "@chakra-ui/icons": "^2.1.1",
-    "@chakra-ui/react": "^2.8.2",
-    "embla-carousel-react": "^8.0.0-rc22",
-    "framer-motion": "^10.16.7",
-    "react": "^18.2.0",
-    "react-animated-cursor": "^2.11.2",
-    "react-dom": "^18.2.0",
-    "react-grid-gallery": "^1.0.1-alpha.0",
-    "react-gridlines": "^1.1.7",
-    "react-rough-notation": "^1.0.5",
-    "react-show-more-text": "^1.7.1",
-    "react-simple-image-slider": "^2.4.1",
-    "react-social-media-embed": "^2.5.9",
-    "styled-components": "^6.1.1",
-    "typewriter-effect": "^2.21.0"
+    "clsx": "^2.1.1",
+    "lucide-react": "^1.73.0",
+    "motion": "^14.14.0",
+    "next": "16.4.6",
+    "next-themes": "^0.4.6",
+    "react": "19.3.0",
+    "react-dom": "19.3.0",
+    "tailwind-merge": "^3.7.0"
   },
   "devDependencies": {
-    "@types/react": "^18.2.37",
-    "@types/react-dom": "^18.2.15",
-    "@vitejs/plugin-react": "^4.2.0",
-    "autoprefixer": "^10.4.16",
-    "eslint": "^8.53.0",
-    "eslint-plugin-react": "^7.33.2",
-    "eslint-plugin-react-hooks": "^4.6.0",
-    "eslint-plugin-react-refresh": "^0.4.4",
-    "postcss": "^8.4.31",
-    "tailwindcss": "^3.3.5",
-    "vite": "^5.0.0"
-  }
+    "@playwright/test": "^1.65.1",
+    "@tailwindcss/turbopack": "4.3.3",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "^9",
+    "eslint-config-next": "16.4.6",
+    "tailwindcss": "4.3.3",
+    "typescript": "^5"
+  },
+  "packageManager": "pnpm@10.26.0"
 }
