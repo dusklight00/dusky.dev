@@ -2,7 +2,7 @@
 
 ## Requirements
 
-- Node.js (the machine this was built on runs v26; Next 16 needs a current LTS or newer)
+- Node.js 24 (`engines.node: "24.x"` in `package.json`, which Vercel uses; newer versions work locally)
 - pnpm 10 (`packageManager: pnpm@10.26.0` in `package.json`)
 
 ## Run, check, build
@@ -65,4 +65,5 @@ variables (otherwise the production domain from `VERCEL_PROJECT_PRODUCTION_URL` 
 | "Activity unavailable" card | GitHub contributions API failed at build/revalidation; rebuild later |
 | Canonical/OG URLs point at localhost | `NEXT_PUBLIC_SITE_URL` not set at build time |
 | Loading screen never shows while testing manually | It plays once per browser session: clear the `intro_seen` cookie or use a private window |
+| Vercel deploy fails in seconds with "invalid or discontinued Node.js Version" | The project setting is still 18.x from the old site; `engines.node` in `package.json` overrides it, so keep that field |
 | `pnpm test:e2e` starts a fresh build | Nothing was listening on :3100; start `pnpm start -p 3100` first to reuse it |

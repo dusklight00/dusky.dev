@@ -67,6 +67,8 @@ pins the Next.js preset. `main-old` holds the previous Vite site.
   `playwright.config.ts`; only `e2e/intro.spec.ts` clears it.
 - Scroll-triggered entrances mean full-page screenshots look empty unless the page is scrolled through first.
 - `NEXT_PUBLIC_SITE_URL` must be set for production builds outside Vercel, or metadata points at localhost.
+- Keep `engines.node` in `package.json`: the Vercel project setting is a discontinued Node 18.x, and without
+  the field every deploy fails within seconds.
 
 ## Keep docs current
 
