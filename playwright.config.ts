@@ -15,7 +15,19 @@ export default defineConfig({
   forbidOnly: !!process.env.CI,
   retries: process.env.CI ? 1 : 0,
   reporter: [["list"]],
-  use: { baseURL, trace: "retain-on-failure", launchOptions },
+  use: {
+    baseURL,
+    trace: "retain-on-failure",
+    launchOptions,
+    // Mark the intro loading screen as already seen so tests start on the page itself;
+    // e2e/intro.spec.ts clears this to test the intro.
+    storageState: {
+      cookies: [
+        { name: "intro_seen", value: "1", domain: "localhost", path: "/", expires: -1, httpOnly: false, secure: false, sameSite: "Lax" },
+      ],
+      origins: [],
+    },
+  },
   projects: [
     { name: "desktop", use: { ...devices["Desktop Chrome"], viewport: { width: 1440, height: 900 } } },
     { name: "mobile", use: { ...devices["Pixel 7"] } },

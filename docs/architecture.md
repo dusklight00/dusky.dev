@@ -9,7 +9,9 @@ no auth. `next build` prerenders everything (`○ Static`).
 src/app/layout.tsx        fonts (next/font: Geist, Geist Mono, Bricolage Grotesque), metadata, viewport colours
  ├─ <noscript> style      reveals motion's server-rendered opacity:0 states when JS is off
  ├─ ThemeProvider          next-themes, class strategy (`.dark` on <html>), default = system
+ ├─ <head> INTRO_SCRIPT    before paint: data-intro="play" (first visit this session) or "skip"
  ├─ MotionProvider         MotionConfig reducedMotion="user"
+ │   └─ IntroProvider      loading screen overlay (~2s), then useIntroDone() = true
  ├─ SiteHeader             fixed frosted bar, anchor nav, mobile menu, ThemeToggle, Resume link
  ├─ page / not-found
  ├─ SiteFooter             sign-off, socials, year (cached), back to top
@@ -38,6 +40,9 @@ motif, tagline, CTAs, socials, live IST clock). Right, in order: `About` · `Exp
 - **Section primitive:** `src/components/ui/section.tsx` renders the eyebrow, title, hairline and
   `aria-labelledby`. Section ids are anchors for the header nav; `SECTION_IDS` in `site-header.tsx`
   must list them in page order (IntersectionObserver band ~40% down the viewport picks the active one).
+- **Intro:** `src/components/intro/intro.tsx`. The overlay is server-rendered so content never flashes;
+  CSS hides it when `<html data-intro="skip">` (cookie present, reduced motion) and the noscript style
+  hides it without JS. Scroll is locked while it plays.
 - **Motion:** `BlurFade` (fade up from blur, once, when 10% visible), `Horizon` (SVG path draw),
   `Marker` (highlighter sweep via the `.marker` / `.is-in` CSS), `CountUp`. All use `EASE_DUSK`.
 - **Theme switch:** `ThemeToggle` sets the class itself, then calls `flushSync(setTheme)` inside

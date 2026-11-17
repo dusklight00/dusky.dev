@@ -169,6 +169,11 @@ body {
   background-size: 100% 72%;
 }
 
+/* Intro overlay is server-rendered; hide it before paint when the intro is skipped. */
+html[data-intro="skip"] .intro-overlay {
+  display: none;
+}
+
 /* Film grain overlay. */
 .grain {
   pointer-events: none;

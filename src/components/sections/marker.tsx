@@ -3,6 +3,7 @@
 import { useRef } from "react";
 import { useInView } from "motion/react";
 import { cn } from "@/lib/utils";
+import { useIntroDone } from "@/components/intro/intro";
 
 type MarkerProps = {
   children: React.ReactNode;
@@ -19,10 +20,11 @@ type MarkerProps = {
 export function Marker({ children, delay = 0, className }: MarkerProps) {
   const ref = useRef<HTMLSpanElement>(null);
   const inView = useInView(ref, { once: true, margin: "0px 0px -15% 0px" });
+  const introDone = useIntroDone();
   return (
     <span
       ref={ref}
-      className={cn("marker", inView && "is-in", className)}
+      className={cn("marker", inView && introDone && "is-in", className)}
       style={{ transitionDelay: `${delay}ms` }}
     >
       {children}

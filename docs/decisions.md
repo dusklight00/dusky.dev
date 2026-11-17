@@ -2,6 +2,11 @@
 
 Newest first. Short "what and why".
 
+## Intro loading screen, once per session
+Reuses the hexagon + "R" logo from the previous site (`main-old`), restyled with the dusk gradient, in the
+spirit of v4.brittanychiang.com's loader. It plays only on the first visit in a browser session (session
+cookie) so returning visitors aren't made to wait, and never with reduced motion or without JS.
+
 ## Handle as wordmark, domain kept off the page
 The header logo is the handle (`dusklight00`), not the name (the hero already shows the name) and not the
 domain. The domain only lives in the `NEXT_PUBLIC_SITE_URL` env var for metadata.

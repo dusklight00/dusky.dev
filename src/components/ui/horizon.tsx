@@ -3,6 +3,7 @@
 import { useId } from "react";
 import { motion } from "motion/react";
 import { cn, EASE_DUSK } from "@/lib/utils";
+import { useIntroDone } from "@/components/intro/intro";
 
 /* -------------------------------------------------------------------------- */
 /*  Signature motif: a thin horizon line with a half-set sun.                  */
@@ -20,10 +21,11 @@ export function Horizon({ className, trigger = "mount", delay = 0 }: HorizonProp
   const lineId = `hz-line-${id}`;
   const sunId = `hz-sun-${id}`;
 
+  const introDone = useIntroDone();
   const draw = (d: number, duration = 1.4) => ({
     initial: { pathLength: 0, opacity: 0 },
     ...(trigger === "mount"
-      ? { animate: { pathLength: 1, opacity: 1 } }
+      ? { animate: introDone ? { pathLength: 1, opacity: 1 } : { pathLength: 0, opacity: 0 } }
       : { whileInView: { pathLength: 1, opacity: 1 }, viewport: { once: true, margin: "0px 0px -10% 0px" } }),
     transition: {
       pathLength: { duration, ease: EASE_DUSK, delay: delay + d },

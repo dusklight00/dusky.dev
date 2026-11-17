@@ -17,6 +17,7 @@ contributions fetch. Repo is **public**: never put secrets or private details in
 | `src/components/layout/` | Header (nav, mobile menu), footer, theme toggle, sticky aside, providers |
 | `src/components/ui/` | Shared primitives: `Section`, `BlurFade`, `Chip`, `Horizon`, `SocialIcon` |
 | `src/components/effects/` | Custom cursor |
+| `src/components/intro/` | First-visit loading screen (hexagon "R" logo) and `useIntroDone()` |
 | `src/lib/` | `cn`, `EASE_DUSK`, `siteUrl` |
 | `src/app/globals.css` | Design tokens (light + `.dark`), Tailwind theme mapping, global utilities |
 | `e2e/` | Playwright suite (desktop + mobile projects) |
@@ -30,6 +31,9 @@ pnpm build && pnpm start
 pnpm typecheck && pnpm lint
 pnpm test:e2e       # reuses a server on :3100 if one runs, else builds + starts it
 ```
+
+Deploy: push to `main` -> Vercel production (Git integration); other branches get previews. `vercel.json`
+pins the Next.js preset. `main-old` holds the previous Vite site.
 
 ## Conventions
 
@@ -57,6 +61,10 @@ pnpm test:e2e       # reuses a server on :3100 if one runs, else builds + starts
 - The image optimiser cache is keyed by URL: when replacing a file in `public/images/`, give it a new name
   (or delete `.next/cache/images`), or the old image keeps being served.
 - `next/image` `priority` is deprecated in Next 16; use `preload`.
+- Entrance animations must wait for the intro: gate them on `useIntroDone()` (BlurFade, Horizon, Marker
+  and CountUp already do), or they play hidden behind the overlay.
+- The intro plays once per browser session (`intro_seen` cookie). Playwright sets that cookie in
+  `playwright.config.ts`; only `e2e/intro.spec.ts` clears it.
 - Scroll-triggered entrances mean full-page screenshots look empty unless the page is scrolled through first.
 - `NEXT_PUBLIC_SITE_URL` must be set for production builds outside Vercel, or metadata points at localhost.
 

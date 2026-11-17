@@ -8,6 +8,7 @@ import { MotionProvider } from "@/components/layout/motion-provider";
 import { SiteHeader } from "@/components/layout/site-header";
 import { SiteFooter } from "@/components/layout/site-footer";
 import { CustomCursor } from "@/components/effects/custom-cursor";
+import { INTRO_SCRIPT, IntroProvider } from "@/components/intro/intro";
 
 const geistSans = Geist({ variable: "--font-geist-sans", subsets: ["latin"] });
 const geistMono = Geist_Mono({ variable: "--font-geist-mono", subsets: ["latin"] });
@@ -46,15 +47,20 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
       suppressHydrationWarning
       className={`${geistSans.variable} ${geistMono.variable} ${bricolage.variable}`}
     >
+      <head>
+        {/* Decides before first paint whether the intro plays (first visit this session) or is skipped. */}
+        <script dangerouslySetInnerHTML={{ __html: INTRO_SCRIPT }} />
+      </head>
       <body className="min-h-dvh bg-bg text-ink">
         {/* Entrance animations server-render their hidden start state; without JS, show everything. */}
         <noscript
           dangerouslySetInnerHTML={{
-            __html: `<style>[style*="opacity:0"]{opacity:1!important;filter:none!important;transform:none!important}</style>`,
+            __html: `<style>[style*="opacity:0"]{opacity:1!important;filter:none!important;transform:none!important}.intro-overlay{display:none!important}</style>`,
           }}
         />
         <ThemeProvider>
           <MotionProvider>
+            <IntroProvider>
             <a
               href="#content"
               className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-full focus:bg-ink focus:px-4 focus:py-2 focus:text-bg"
@@ -66,6 +72,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
             <SiteFooter />
             <CustomCursor />
             <div aria-hidden className="grain" />
+            </IntroProvider>
           </MotionProvider>
         </ThemeProvider>
       </body>

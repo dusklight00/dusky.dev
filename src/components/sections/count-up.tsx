@@ -3,6 +3,7 @@
 import { useEffect, useRef } from "react";
 import { animate, useInView, useReducedMotion } from "motion/react";
 import { EASE_DUSK } from "@/lib/utils";
+import { useIntroDone } from "@/components/intro/intro";
 
 /**
  * Renders a stat such as "500+" and counts the numeric part up from 0 the first
@@ -12,11 +13,12 @@ export function CountUp({ value, className }: { value: string; className?: strin
   const ref = useRef<HTMLSpanElement>(null);
   const inView = useInView(ref, { once: true, margin: "0px 0px -10% 0px" });
   const reduce = useReducedMotion();
+  const introDone = useIntroDone();
 
   useEffect(() => {
     const node = ref.current;
     const match = /^(\D*)(\d+)(.*)$/.exec(value);
-    if (!inView || reduce || !node || !match) return;
+    if (!inView || !introDone || reduce || !node || !match) return;
     const [, prefix, digits, suffix] = match;
     const target = Number(digits);
     const controls = animate(0, target, {
@@ -30,7 +32,7 @@ export function CountUp({ value, className }: { value: string; className?: strin
       controls.stop();
       node.textContent = value;
     };
-  }, [inView, reduce, value]);
+  }, [inView, introDone, reduce, value]);
 
   return (
     <span ref={ref} className={className}>
